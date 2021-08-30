@@ -1,0 +1,37 @@
+/* 
+    Document   : validation
+    Created on : Jan 29
+    Description:
+        This stylesheet is for validation errors and field related styles only.
+*/
+
+label.error,
+div.error {
+  color: #d00;
+  font-size: 12px;
+}
+
+input.error,
+select.error,
+textarea.error {
+  border-color: #d00;
+}
+
+form .pull-right .controls-row .control-group:first-child .controls {
+  max-height: 45px;
+}
+
+.checkbox label.error {
+  display: inline-block;
+  width: auto;
+}
+
+/*Form Required Field Markups */
+
+fieldset.required label:after {
+  content: " *";
+  color: #d00;
+}
+fieldset.required label.error:after {
+  content: "";
+}
