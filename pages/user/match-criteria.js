@@ -19,7 +19,7 @@ export default function MatchCriteria() {
                 id="match_criteria"
                 action=""
                 method="post"
-                enctype="multipart/form-data"
+                encType="multipart/form-data"
               >
                 <div className="card mt-2">
                   <div id="accordion" className="accordion">
@@ -532,8 +532,8 @@ export default function MatchCriteria() {
                             className="  col-sm-8  col-lg-8"
                             placeholder="Other Status in USA"
                             value=""
-                            readonly
-                          />{" "}
+                            readOnly
+                          />
                         </fieldset>
                         <fieldset className="form-check-inline">
                           <label

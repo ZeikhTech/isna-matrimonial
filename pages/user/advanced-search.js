@@ -1,4 +1,28 @@
+import Link from "next/link";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 export default function AdvancedSearch() {
+  const [minAge, setMinAge] = useState(18);
+  const [maxAge, setMaxAge] = useState("");
+  const [minHeight, setMinHeight] = useState(3);
+  const [eyeColor, setEyeColor] = useState({ black: false, blue: false });
+
+  const array = [];
+  for (var i = 18; i < 100; i++) {
+    array[i] = i;
+  }
+
+  const height = [];
+  // const feet = "",
+  //  const inch = "";
+
+  for (var i = 3; i < 7; i++) {
+    for (var j = 0; j < 12; j++) {
+      var key = parseFloat(i + "." + j);
+      var value = i + "'" + j;
+      height.push({ key, value });
+    }
+  }
   return (
     <div className="card">
       <div id="accordion" className="accordion wrpar">
@@ -30,13 +54,14 @@ export default function AdvancedSearch() {
                         className="form-control d-block w-100"
                         id="age_from"
                         name="age_from"
+                        onChange={(e) => {
+                          setMinAge(e.target.value);
+                        }}
                       >
                         <option value="0">From</option>
-                        <option value="18">18</option>
-                        <option value="19">19</option>
-                        <option value="20">20</option>
-                        <option value="21">21</option>
-                        <option value="22">22</option>
+                        {array.map((element) => {
+                          return <option value={element}>{element}</option>;
+                        })}
                       </select>
                     </div>
                     <div className="col-lg-6">
@@ -44,12 +69,14 @@ export default function AdvancedSearch() {
                         className="form-control d-block w-100"
                         id="age_to"
                         name="age_to"
+                        onChange={(e) => setMaxAge(e.target.value)}
                       >
                         <option value="0">To</option>
-                        <option value="18">18</option>
-                        <option value="19">19</option>
-                        <option value="20">20</option>
-                        <option value="21">21</option>
+                        {array
+                          .filter((age) => age >= minAge)
+                          .map((element) => {
+                            return <option value={element}>{element}</option>;
+                          })}
                       </select>
                     </div>
                   </div>
@@ -71,11 +98,16 @@ export default function AdvancedSearch() {
                         className="form-control d-block w-100"
                         id="height_from"
                         className="span2"
+                        onChange={(e) => {
+                          setMinHeight(e.target.value);
+                        }}
                       >
                         <option value="0">From</option>
-                        <option value="1">3'0"(91cm)</option>
-                        <option value="2">3'1"(93cm)</option>
-                        <option value="3">3'2"(96cm)</option>
+                        {height.map((element) => {
+                          return (
+                            <option value={element.key}>{element.value}</option>
+                          );
+                        })}
                       </select>
                     </div>
                     <div className="col-lg-6">
@@ -86,12 +118,18 @@ export default function AdvancedSearch() {
                         className="span2"
                       >
                         <option value="0">To</option>
-                        <option value="1">3'0"(91cm)</option>
-                        <option value="2">3'1"(93cm)</option>
-                        <option value="3">3'2"(96cm)</option>
-                        <option value="4">3'3"(99cm)</option>
-                        <option value="5">3'4"(101cm)</option>
-                        <option value="6">3'5"(104cm)</option>
+                        {height
+                          .filter(
+                            (height) =>
+                              parseFloat(height.key) >= parseFloat(minHeight)
+                          )
+                          .map((element) => {
+                            return (
+                              <option value={element.key}>
+                                {element.value}
+                              </option>
+                            );
+                          })}
                       </select>
                     </div>
                   </div>
@@ -104,25 +142,29 @@ export default function AdvancedSearch() {
               </label>
               <div className="row justify-content-start flex-wrap pr-2 w-100">
                 <div className="i-agree inline text_13 span3">
-                  <input type="checkbox" name="Black" id="Black" />
-                  <label for="Black">
-                    {" "}
-                    <a href="">Black </a>{" "}
-                  </label>
+                  <input
+                    type="checkbox"
+                    name="black"
+                    id="Black"
+                    selected={false}
+                    onChange={(e) => {
+                      if (e.target.selected == false) {
+                        console.log("true", e.target.selected);
+                        setEyeColor();
+                      }
+                      // e.target.value = false;
+                      // console.log(e.target.value);
+                    }}
+                  />
+                  <label for="Black">Black</label>
                 </div>
                 <div className="i-agree inline text_13 span3">
                   <input type="checkbox" name="Blue" id="Blue" />
-                  <label for="Blue">
-                    {" "}
-                    <a href="">Blue </a>{" "}
-                  </label>
+                  <label for="Blue">Blue</label>
                 </div>
                 <div className="i-agree inline text_13 span3">
                   <input type="checkbox" name="Brown" id="Brown" />
-                  <label for="Brown">
-                    {" "}
-                    <a href="">Brown </a>{" "}
-                  </label>
+                  <label for="Brown"> Brown </label>
                 </div>
                 <div className="i-agree inline text_13 span3">
                   <input
@@ -130,31 +172,19 @@ export default function AdvancedSearch() {
                     name="Colored-contacts"
                     id="Colored-contacts"
                   />
-                  <label for="Colored-contacts">
-                    {" "}
-                    <a href="">Colored contacts </a>{" "}
-                  </label>
+                  <label for="Colored-contacts"> Colored contacts </label>
                 </div>
                 <div className="i-agree inline text_13 span3">
                   <input type="checkbox" name="Green" id="Green" />
-                  <label for="Green">
-                    {" "}
-                    <a href="">Green </a>{" "}
-                  </label>
+                  <label for="Green"> Green </label>
                 </div>
                 <div className="i-agree inline text_13 span3">
                   <input type="checkbox" name="Grey" id="Grey" />
-                  <label for="Grey">
-                    {" "}
-                    <a href="">Grey </a>{" "}
-                  </label>
+                  <label for="Grey"> Grey </label>
                 </div>
                 <div className="i-agree inline text_13 span3">
                   <input type="checkbox" name="Hazel" id="Hazel" />
-                  <label for="Hazel">
-                    {" "}
-                    <a href="">Hazel </a>{" "}
-                  </label>
+                  <label for="Hazel"> Hazel </label>
                 </div>
               </div>
             </fieldset>

@@ -1,8 +1,48 @@
 import Link from "next/link";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { loginSchema } from "../../utils/validations";
-
+import { useRouter } from 'next/router'
+import { useSelector, useDispatch } from "react-redux";
+import {useState} from "react"
+import {
+  signinUser,
+} from "../redux/api/auth";
 export default function Login() {
+const {errors,setErrors}= useState("")
+  const router = useRouter()
+    const dispatch = useDispatch();
+  const submitForm = async (userData) => {
+
+    dispatch(
+      signinUser({
+        body: userData,
+        onSuccess: (res) => {
+
+          console.log(res);
+          if(res.data.status==200){
+            localStorage.setItem("accessToken",res.data.accessToken)
+            router.push('/', undefined, { shallow: true })  
+          }
+
+          // this.props.history.push("/");
+        },onError:(res)=>{
+          console.log(res);
+          if(res.status==403){
+            console.log("402");
+            alert("Worng usernmae password")
+          }else if(res.status==401){
+            console.log("401");
+            alert("User not found")
+          }
+          
+        },
+        onEnd: () => {
+          // setShowLoader(false);
+        },
+      })
+    );
+    }
+
   return (
     <div>
       <section className="login-page">
@@ -18,8 +58,8 @@ export default function Login() {
                 <Formik
                   initialValues={{ email: "", password: "" }}
                   validationSchema={loginSchema}
-                  onSubmit={(values) => {
-                    console.log("values", values);
+                  onSubmit={(value) => {
+                    submitForm(value); 
                   }}
                 >
                   {({ errors, touched }) => (

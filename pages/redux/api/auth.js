@@ -3,7 +3,7 @@ import storage from "../../../services/storage";
 
 import { handleErrors } from "../../../helpers/error";
 
-import { setToken, setUser, resetAuth } from "../auth/authReducer";
+import { setToken, setUser, resetAuth } from "../reducer/authReducer";
 
 const path = "/auth";
 export const signupUser = ({ body = {}, onSuccess, onError, onEnd }) => {
@@ -16,7 +16,6 @@ export const signupUser = ({ body = {}, onSuccess, onError, onEnd }) => {
         headers,
       } = res;
       const xAuthToken = headers["x-auth-token"];
-
       dispatch(setToken(xAuthToken));
       dispatch(setUser(user));
       setCookie("xAuthToken", xAuthToken, 365);
@@ -34,6 +33,41 @@ export const signupUser = ({ body = {}, onSuccess, onError, onEnd }) => {
     }
   };
 };
+export const signinUser = ({ body = {}, onSuccess, onError, onEnd }) => {
+  return async (dispatch) => {
+    try {
+      //showing loader on ui
+      const res = await http.post({ url: path + "/signin", body });
+
+      const {
+        data: { data: user },
+        headers,
+      } = res;
+      console.log(res.data.data);
+      // const xAuthToken = headers["x-auth-token"];
+      const xAuthToken = res.data.accessToken;
+
+      console.log("token in redux", dispatch(setToken(xAuthToken)));
+      dispatch(setToken(xAuthToken));
+      // dispatch(setToken(xAuthToken));
+
+      dispatch(setUser(user));
+      setCookie("xAuthToken", xAuthToken, 365);
+      storage.store("xAuthToken", xAuthToken);
+      storage.store("user", user);
+      // //onSuccess event firing
+      if (onSuccess) onSuccess(res);
+    } catch (err) {
+      console.log("err", err);
+      //onError event firing
+      if (onError) onError(err);
+      else handleErrors(err);
+    } finally {
+      if (onEnd) onEnd();
+    }
+  };
+};
+
 function setCookie(cname, cvalue, exdays) {
   var d = new Date();
   d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);

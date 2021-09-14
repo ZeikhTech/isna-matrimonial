@@ -45,14 +45,12 @@ class myDocument extends Document {
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
             crossOrigin="anonymous"
           ></link>
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+          {/* <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> */}
           <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
           <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-          <script src="/assets/js/custom.js"></script>{" "}
           <script src="/assets/js/bootstrap.min.js"></script>
-          <script src="/assets/js/jquery-3.5.1.js"></script>
-          {/* <script src="/assets/js/custom.js"></script> */}
+          {/* <script src="/assets/js/jquery-3.5.1.js"></script> */}
         </Head>
         <body>
           <Main />

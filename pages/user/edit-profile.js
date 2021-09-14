@@ -16,7 +16,7 @@ export default function EditProfile() {
                 id="manage_profile"
                 action="/profile/manage"
                 method="post"
-                enctype="multipart/form-data"
+                encType="multipart/form-data"
               >
                 <div>
                   <fieldset className="form-check-inline required">
@@ -27,7 +27,7 @@ export default function EditProfile() {
                       Display Name
                     </label>
                     <input
-                      readonly=""
+                      readOnly=""
                       type="text"
                       id="nick_name"
                       name="nick_name"
@@ -403,7 +403,7 @@ export default function EditProfile() {
                       value=""
                       className="col-sm-8 col-lg-8 form-control"
                       placeholder="Other Profession"
-                      readonly
+                      readOnly
                     />
                   </fieldset>
                   <fieldset className="form-check-inline  required">
@@ -472,7 +472,7 @@ export default function EditProfile() {
                       placeholder="Other Education"
                       className="col-sm-8 col-lg-8 form-control"
                       value=""
-                      readonly
+                      readOnly
                     />
                   </fieldset>
                 </div>
@@ -760,7 +760,7 @@ export default function EditProfile() {
                         placeholder="Guardian name"
                         value=""
                         className="col-sm-8 col-lg-8 form-control"
-                        readonly
+                        readOnly
                       />{" "}
                     </fieldset>
                     <fieldset className="form-check-inline  required">
