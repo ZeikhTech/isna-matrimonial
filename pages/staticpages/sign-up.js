@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useSelector, useDispatch } from "react-redux";
-
+import { useRouter } from 'next/router'
 import { signupSchema } from "../../utils/validations";
 import { useState, useContext } from "react";
 import { postData } from "../../utils/fetchData";
@@ -19,7 +19,8 @@ const initialValue = {
 };
 
 export default function SignUp() {
-  const dispatch = useDispatch();
+  const router = useRouter()
+    const dispatch = useDispatch();
   const submitForm = async (userData) => {
     console.log(userData);
     // const res = await postData("auth/register", userData);
@@ -28,20 +29,18 @@ export default function SignUp() {
       signupUser({
         body: userData,
         onSuccess: (res) => {
-          console.log("success ha");
-          console.log("success ha", res);
-
           // if (verifyLink) {
           //   verifyLink.click();
           // }
-          // props.history.replace("/");
+          router.push('/staticpages/login', undefined, { shallow: true })
+          // this.props.history.push("/");
         },
         onEnd: () => {
           // setShowLoader(false);
         },
       })
     );
-    // console.log(res);
+
   };
   const [userData, setUserData] = useState(initialValue);
   const { name, email, password, cf_password } = userData;

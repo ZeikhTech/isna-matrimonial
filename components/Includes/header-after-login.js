@@ -1,4 +1,17 @@
+import Link from "next/link";
+import { useSelector, useDispatch } from "react-redux";
+import {logout} from "../../pages/redux/reducer/authReducer"
+import { useRouter } from 'next/router'
+
 export default function HeaderAfterLogin() {
+  const router = useRouter()
+
+  const dispatch = useDispatch()
+  const logoutt = (e)=>{
+  dispatch(logout())
+  router.push('/staticpages/login', undefined, { shallow: true })
+
+  }
   return (
     <header>
       <div className="navbar-fixed-top">
@@ -13,11 +26,17 @@ export default function HeaderAfterLogin() {
             </a>
             <div className="pull-right ">
               <div className="pull-right d-flex align-items-center ">
-                <a href="/user/dashboard">Dashboard</a>{" "}
+                <Link href="/user/dashboard">
+                  <a>Dashboard</a>
+                </Link>
                 <span className="mr-15 ml-15 va-m">|</span>{" "}
-                <a href="/user/messages">Communication</a>{" "}
+                <Link href="/user/messages">
+                  <a>Communication</a>
+                </Link>
                 <span className="mr-15 ml-15 va-m">|</span>{" "}
-                <a href="/user/list-media">Gallery</a>
+                <Link href="/user/list-media">
+                  <a>Gallery</a>
+                </Link>
                 <div
                   className="btn-group ml-15 dropdown"
                   style={{ display: "inline-block !important" }}
@@ -45,62 +64,34 @@ export default function HeaderAfterLogin() {
                       {/* Dropdown button */}
                     </button>{" "}
                     <div className="dropdown-menu">
-                      <a className="dropdown-item" href="/user/edit-profile">
-                        <i className="icon-cog"></i> Update Profile
-                      </a>
+                      <Link href="/user/edit-profile">
+                        <a className="dropdown-item">
+                          <i className="icon-cog"></i> Update Profile
+                        </a>
+                      </Link>
                       <div className="dropdown-divider"></div>
-                      <a
-                        className="dropdown-item"
-                        href="/user/membership-settings"
-                      >
-                        <i className="icon-user"></i> Manage Membership
-                      </a>
-                      <a className="dropdown-item" href="/user/match-criteria">
-                        <i className="icon-eye-open"></i> Match Criteria
-                      </a>
+                      <Link href="/user/membership-settings">
+                        <a className="dropdown-item">
+                          <i className="icon-user"></i> Manage Membership
+                        </a>
+                      </Link>
+                      <Link href="/user/match-criteria">
+                        <a className="dropdown-item">
+                          <i className="icon-eye-open"></i> Match Criteria
+                        </a>
+                      </Link>
                       <div className="dropdown-divider"></div>
-                      <a
-                        className="dropdown-item"
-                        href="/staticpages/change-password"
-                      >
-                        <i className="icon-lock"></i> Change Password
-                      </a>
-                      <a className="dropdown-item" href="/staticpages/login">
-                        <i className="icon-signout"></i> Sign Out
-                      </a>
+                      <Link href="/staticpages/change-password">
+                        <a className="dropdown-item">
+                          <i className="icon-lock"></i> Change Password
+                        </a>
+                      </Link>
+                        <a className="dropdown-item" onClick={(e)=>{logoutt(e)}}>
+                          <i className="icon-signout"></i> Sign Out
+                        </a>
+                      
                     </div>
                   </div>
-
-                  {/* <ul className="dropdown-menu">
-                    <li>
-                      <a href="/user/edit-profile">
-                        <i className="icon-cog"></i> Update Profile
-                      </a>
-                    </li>
-                    <li className="divider"></li>
-                    <li>
-                      <a href="/user/membership-settings">
-                        <i className="icon-user"></i> Manage Membership
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/user/match-criteria">
-                        <i className="icon-eye-open"></i> Match Criteria
-                      </a>
-                    </li>
-                    <li className="divider"></li>
-                    <li>
-                      <a href="/staticpages/change-password">
-                        <i className="icon-lock"></i> Change Password
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/staticpages/login">
-                        <i className="icon-signout"></i> Sign Out
-                      </a>
-                    </li>
-                  </ul>
-               */}
                 </div>
               </div>
             </div>

@@ -24,13 +24,18 @@ const slice = createSlice({
       state.user = action.payload;
     },
     setToken: (state, action) => {
+      console.log("called this action",action);
       state.token = action.payload;
+    },
+    logout:(state,action)=>{
+      state.token=""
     },
     resetAuth: (state) => {
       state = initialState;
     },
+
   },
 });
 
-export const { setUser, setToken, resetAuth } = slice.actions;
+export const { setUser, setToken, resetAuth,logout } = slice.actions;
 export default slice.reducer;

@@ -61,7 +61,7 @@ export default function InviteFriend() {
                       name="subject"
                       placeholder="Subject"
                       className="form-control col-lg-8 col-sm-8  readonly"
-                      readonly="readonly"
+                      readOnly="readonly"
                       value="Invitation to join Matrimonial"
                     />{" "}
                   </fieldset>

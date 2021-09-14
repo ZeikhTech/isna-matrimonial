@@ -4,6 +4,8 @@ import SavedResults from "./saved-result";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import React, { useState } from "react";
+
 const OwlCarousel = dynamic(import("react-owl-carousel"), {
   ssr: false,
 });
@@ -74,10 +76,9 @@ export default function Dashboard() {
                 aria-selected="true"
               >
                 Search Profile
-              </a>{" "}
+              </a>
             </li>
             <li className="nav-item" role="presentation">
-              {" "}
               <a
                 className="nav-link"
                 id="pills-profile-tab"
@@ -88,10 +89,9 @@ export default function Dashboard() {
                 aria-selected="false"
               >
                 Advance Search
-              </a>{" "}
+              </a>
             </li>
             <li className="nav-item" role="presentation">
-              {" "}
               <a
                 className="nav-link"
                 id="pills-contact-tab"

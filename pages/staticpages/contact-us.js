@@ -1,8 +1,31 @@
 import Link from "next/link";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { contactUs } from "../../utils/validations";
-
+import React, { useState } from "react";
 export default function ContactUs() {
+  const [subject, setSubject] = useState("");
+  const [email, setEmail] = useState("");
+  const [errors, setErrors] = useState("");
+  const [message, setMessage] = useState("");
+  const onSubmit = (e) => {
+    const exp = /^[a-z A-Z]+$/;
+    const regexp =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    e.preventDefault();
+    if (subject == "") {
+      setErrors("Subject is required");
+    } else if (subject.length < 3 || !subject.match(exp)) {
+      setErrors("Invalid subject");
+    } else if (email == "") {
+      setErrors("Email is required");
+    } else if (!email.match(regexp)) {
+      setErrors("Invalid email address");
+    } else if (message == "") {
+      setErrors("Message is required");
+    } else {
+      setErrors("");
+    }
+  };
   return (
     <div>
       <div className="page-title">
@@ -52,57 +75,61 @@ export default function ContactUs() {
             <div className="col-lg-6 col-md-6">
               <h4>Customer care</h4>
               <p>For customer care enquiries</p>
-              <Formik
-                initialValues={{ subject: "", email: "" }}
-                validationSchema={contactUs}
-                onSubmit={(values) => {
-                  console.log("comming");
-                  alert(JSON.stringify(values, null, 2));
-                }}
-              >
-                {({ errors, touched, handleSubmit }) => (
-                  <Form>
-                    <div className="txt_field">
-                      {errors.subject && touched.subject ? (
-                        <div>{errors.subject}</div>
-                      ) : null}
-                      <Field type="text" name="subject" /> <span></span>
-                      <label>Subject*</label>
-                    </div>
-                    <div className="txt_field">
-                      {errors.email && touched.email ? (
-                        <div>{errors.email}</div>
-                      ) : null}
-                      <Field type="text" name="email" /> <span></span>
-                      <label>email*</label>
-                    </div>
-                    <div className="form-group">
-                      <textarea
-                        name="textArea"
-                        className="form-control"
-                        rows="6"
-                        placeholder="Message*"
-                      ></textarea>
 
-                      <div className="upload-btn-wrapper">
-                        <button className="btn">
-                          Attatch File <i className="fa fa-paperclip"></i>
-                        </button>
-                        <input type="file" name="myfile" />
-                      </div>
-                    </div>
+              <form>
+                <div className="txt_field">
+                  <input
+                    type="text"
+                    name="subject"
+                    onChange={(e) => setSubject(e.target.value)}
+                  />
+                  <span></span>
+                  <label>Subject*</label>
+                </div>
+                <div className="txt_field">
+                  <input
+                    type="text"
+                    name="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                  <span></span>
+                  <label>email*</label>
+                </div>
+                <div className="form-group">
+                  <textarea
+                    name="message"
+                    className="form-control"
+                    rows="6"
+                    placeholder="Message*"
+                    onChange={(e) => setMessage(e.target.value)}
+                  ></textarea>
 
-                    <a
-                      onClick={(e) => {
-                        handleSubmit(e);
-                      }}
-                      className="theme-btn-light"
-                    >
-                      Submit
-                    </a>
-                  </Form>
+                  {/* <div className="upload-btn-wrapper">
+                    <button className="btn">
+                      Attatch File <i className="fa fa-paperclip"></i>
+                    </button>
+                    <input type="file" name="myfile" />
+                  </div> */}
+                </div>
+                {errors ? (
+                  <div
+                    style={{ color: "#FE6E00" }}
+                    className="alert alert-danger"
+                  >
+                    {errors}
+                  </div>
+                ) : (
+                  ""
                 )}
-              </Formik>
+                <a
+                  className="theme-btn-light"
+                  onClick={(e) => {
+                    onSubmit(e);
+                  }}
+                >
+                  Submit
+                </a>
+              </form>
             </div>
           </div>
         </div>
