@@ -33,7 +33,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link href="/staticpages/faq">
-                    <a>faq's </a>
+                    <a>faqs </a>
                   </Link>
                 </li>
                 <li>

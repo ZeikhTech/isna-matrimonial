@@ -170,7 +170,7 @@ export default function Messages() {
                         </thead>
                         <tbody>
                           <tr>
-                            <td colspan="4">
+                            <td colSpan="4">
                               <div className="alert alert-info" align="left">
                                 {" "}
                                 <i className="icon-info-sign mr-10"></i>You have

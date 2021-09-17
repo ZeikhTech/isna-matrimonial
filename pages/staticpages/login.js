@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {useState} from "react"
 import {
   signinUser,
-} from "../redux/api/auth";
+} from "../../redux/api/auth";
 export default function Login() {
 const {errors,setErrors}= useState("")
   const router = useRouter()
@@ -96,7 +96,7 @@ const {errors,setErrors}= useState("")
                         />
                         <label
                           className="custom-control-label"
-                          for="customCheckBox1"
+                          htmlFor="customCheckBox1"
                         >
                           Keep me signed in
                         </label>

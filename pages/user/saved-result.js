@@ -5,7 +5,7 @@ export default function SavedResults() {
         <h3>Search results</h3>
         <hr className="my-3" />
         <div className="card">
-          <p>Sorry, you did'nt save any search.</p>
+          <p>Sorry, you did not save any search.</p>
         </div>
       </div>
       <div className="col-lg-12 mb-5  ">

@@ -9,7 +9,7 @@ import {
   signupUser,
   signinWithFacebook,
   signinWithGoogle,
-} from "../redux/api/auth";
+} from "../../redux/api/auth";
 
 const initialValue = {
   name: "",
@@ -19,6 +19,7 @@ const initialValue = {
 };
 
 export default function SignUp() {
+  // log
   const router = useRouter()
     const dispatch = useDispatch();
   const submitForm = async (userData) => {

@@ -13,7 +13,7 @@ export default function TermsCondition() {
             <b>Welcome to ISNA Matrimonial,</b> the No.1 Muslim Matrimonial
             Services Provider in North America. In order to use the ISNA
             Matrimonial Site, you must register as a member of the Site and
-            agree to be bound by these (“Terms of Use Agreement"). This
+            agree to be bound by these (<b>Terms of Use Agreement</b>). This
             Agreement sets out the legally binding terms for your membership. If
             you object to anything in this Agreement or the ISNA Matrimonial
             Privacy Policy, do not use the Website or the Service. This
@@ -60,15 +60,15 @@ export default function TermsCondition() {
           <h4 className="font-weight-bold mb-0">Membership Categories</h4>
           <p>
             Users of the Service may use minimal service as Guests (Public
-            Users) or become "Trial Members" or "Deluxe Members" of the Service.
-            Guests are allowed access to a minimal level of the Service's
+            Users) or become Trial Members or <b>Deluxe Members</b> of the Service.
+            Guests are allowed access to a minimal level of the Service
             features. Trial Members are allowed to access more features of the
             Service than are Guests, but are not allowed access to all of the
             features that Deluxe Members are allowed to access. Trial Members
             are not charged by us for the features they can access. Deluxe
             Members are provided with access to additional features of the
             Service that are not available to Guests or Trial Members. Certain
-            features of the Service are "paid features", for which a Deluxe
+            features of the Service are paid features, for which a Deluxe
             Member is charged.
           </p>
           <h4 className="font-weight-bold mb-0">Fees and Payments</h4>
@@ -125,7 +125,7 @@ export default function TermsCondition() {
             which ISNA Matrimonial deems appropriate in its sole discretion.
           </p>
           <p>
-            You may not use any automated processes, including IRC Bots, EXE's,
+            You may not use any automated processes, including IRC Bots, EXEs,
             CGI or any other programs/scripts to view content on or communicate
             / contact / respond / interact with ISNA Matrimonial and/or its
             members.
@@ -155,7 +155,7 @@ export default function TermsCondition() {
           <p>
             You may not include in your Member profile, visible to other
             members, any telephone numbers, street addresses, and last names,
-            URL's, email addresses or any other information that would allow
+            URL, email addresses or any other information that would allow
             others to locate or contact you outside of the Service.
           </p>
           <p>c. Content Responsibility</p>

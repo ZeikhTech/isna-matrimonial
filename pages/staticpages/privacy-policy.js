@@ -72,7 +72,7 @@ export default function PrivacyPolicy() {
             <b>Private:</b> We primarily use email addresses submitted by
             members to verify enrollment and when forwarding anonymous e-mails
             from ad responders. Email addresses are not disclosed to the
-            responder. We may also use a user's email address to send news
+            responder. We may also use email of a user to send news
             regarding our site or events, but the user may choose not to receive
             email of this type by contacting us. Email addresses may also be
             used in private correspondence with the user for customer service
@@ -110,11 +110,11 @@ export default function PrivacyPolicy() {
             removing their profile information from our database at any time.
             Please use the Edit My Profile button to make any changes. If you
             want to change your main email address contact information, please
-            use the 'Edit My Contact Info' button.
+            use the Edit My Contact Info button.
           </p>
           <h4 className="font-weight-bold mb-0">Security</h4>
           <p>
-            ISNA Matrimonials takes every precaution to protect our users'
+            ISNA Matrimonials takes every precaution to protect our users
             information. When users submit sensitive information via the
             website, your information is protected both online and off-line.
             When our registration/order process asks users to enter sensitive
@@ -122,7 +122,7 @@ export default function PrivacyPolicy() {
             encrypted and is protected with the best encryption software in the
             industry - SSL. While we use SSL encryption to protect sensitive
             information online, we also do everything in our power to protect
-            user information off-line. All of our users' information, not just
+            user information off-line. All of our users information, not just
             the sensitive information mentioned above, is restricted in our
             offices. Only employees who need the information to perform a
             specific job (for example a billing clerk or a customer service
@@ -133,7 +133,7 @@ export default function PrivacyPolicy() {
           <h4 className="font-weight-bold mb-0">Cancellation Policy:</h4>
           <p>
             Members may cancel at any time but no refund will be given if your
-            membership plan hasn't ended yet.
+            membership plan hasnt ended yet.
           </p>
         </div>
       </section>

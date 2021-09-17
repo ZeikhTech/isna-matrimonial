@@ -108,7 +108,7 @@ export default function Profile() {
                     <td>
                       <strong>Height</strong>
                     </td>
-                    <td> 5'5"(165cm) </td>
+                    <td> 5(165cm) </td>
                   </tr>
                   <tr>
                     <td>

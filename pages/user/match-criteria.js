@@ -40,7 +40,7 @@ export default function MatchCriteria() {
                         <fieldset className="form-check-inline">
                           <label
                             className="control-label col-sm-4  col-lg-4"
-                            for="age"
+                            htmlFor="age"
                           >
                             Age Range
                           </label>
@@ -68,7 +68,7 @@ export default function MatchCriteria() {
                         <fieldset className="form-check-inline">
                           <label
                             className="control-label col-sm-4  col-lg-4"
-                            for="height"
+                            htmlFor="height"
                           >
                             Height Range
                           </label>
@@ -78,9 +78,9 @@ export default function MatchCriteria() {
                             id="height_from"
                           >
                             <option value="0">From</option>
-                            <option value="1">3'0"(91cm)</option>
-                            <option value="2">3'1"(93cm)</option>
-                            <option value="3">3'2"(96cm)</option>
+                            <option value="1">3</option>
+                            <option value="2">3(93cm)</option>
+                            <option value="3">3(96cm)</option>
                           </select>
                           <select
                             name="height_to"
@@ -88,15 +88,15 @@ export default function MatchCriteria() {
                             id="height_to"
                           >
                             <option value="0">To</option>
-                            <option value="1">3'0"(91cm)</option>
-                            <option value="2">3'1"(93cm)</option>
-                            <option value="3">3'2"(96cm)</option>
+                            <option value="1">3(91cm)</option>
+                            <option value="2">31(93cm)</option>
+                            <option value="3">32(96cm)</option>
                           </select>
                         </fieldset>
                         <fieldset className="form-check-inline">
                           <label
                             className="control-label col-sm-4  col-lg-4"
-                            for="color"
+                            htmlFor="color"
                           >
                             Eye Color
                           </label>
@@ -107,7 +107,7 @@ export default function MatchCriteria() {
                                 name="Black-2"
                                 id="Black-2"
                               />
-                              <label for="Black-2">
+                              <label htmlFor="Black-2">
                                 {" "}
                                 <a href="">Black</a>{" "}
                               </label>
@@ -118,7 +118,7 @@ export default function MatchCriteria() {
                                 name="Blue-2"
                                 id="Blue-2"
                               />
-                              <label for="Blue-2">
+                              <label htmlFor="Blue-2">
                                 {" "}
                                 <a href="">Blue</a>{" "}
                               </label>
@@ -128,7 +128,7 @@ export default function MatchCriteria() {
                         <fieldset className="form-check-inline">
                           <label
                             className="control-label  col-sm-4  col-lg-4"
-                            for="Hcolor"
+                            htmlFor="Hcolor"
                           >
                             Hair Color
                           </label>
@@ -139,7 +139,7 @@ export default function MatchCriteria() {
                                 name="Auburn/Red"
                                 id="Auburn/Red"
                               />
-                              <label for="Auburn/Red">
+                              <label htmlFor="Auburn/Red">
                                 {" "}
                                 <a href="">Auburn/Red</a>{" "}
                               </label>
@@ -149,14 +149,14 @@ export default function MatchCriteria() {
                         <fieldset className="form-check-inline">
                           <label
                             className="control-label col-sm-4  col-lg-4"
-                            for="Build"
+                            htmlFor="Build"
                           >
                             Build
                           </label>
                           <div className="row justify-content-start flex-wrap pr-2 w-100">
                             <div className="i-agree inline text_13 span3">
                               <input type="checkbox" name="Slim" id="Slim" />
-                              <label for="Slim">
+                              <label htmlFor="Slim">
                                 {" "}
                                 <a href="">Slim</a>{" "}
                               </label>
@@ -167,7 +167,7 @@ export default function MatchCriteria() {
                                 name="Athletic"
                                 id="Athletic"
                               />
-                              <label for="Athletic">
+                              <label htmlFor="Athletic">
                                 {" "}
                                 <a href="">Athletic</a>{" "}
                               </label>
@@ -178,7 +178,7 @@ export default function MatchCriteria() {
                                 name="Full Figured"
                                 id="Full-Figured"
                               />
-                              <label for="Full-Figured">
+                              <label htmlFor="Full-Figured">
                                 {" "}
                                 <a href="">Full Figured</a>{" "}
                               </label>
@@ -207,7 +207,7 @@ export default function MatchCriteria() {
                         <fieldset className="form-check-inline">
                           <label
                             className="control-label col-sm-4  col-lg-4"
-                            for="work"
+                            htmlFor="work"
                           >
                             Profession
                           </label>
@@ -218,7 +218,7 @@ export default function MatchCriteria() {
                                 name="Medical Doctor"
                                 id="Medical-Doctor"
                               />
-                              <label for="Medical-Doctor">
+                              <label htmlFor="Medical-Doctor">
                                 {" "}
                                 <a href="">Medical Doctor</a>{" "}
                               </label>
@@ -229,7 +229,7 @@ export default function MatchCriteria() {
                                 name="Dentist"
                                 id="Dentist"
                               />
-                              <label for="Dentist">
+                              <label htmlFor="Dentist">
                                 {" "}
                                 <a href="">Dentist</a>{" "}
                               </label>
@@ -240,14 +240,14 @@ export default function MatchCriteria() {
                                 name="Computer Scientist"
                                 id="Computer-Scientist"
                               />
-                              <label for="Computer-Scientist">
+                              <label htmlFor="Computer-Scientist">
                                 {" "}
                                 <a href="">Computer Scientist</a>{" "}
                               </label>
                             </div>
                             <div className="i-agree inline text_13 span5">
                               <input type="checkbox" name="Other" id="Other" />
-                              <label for="Other">
+                              <label htmlFor="Other">
                                 {" "}
                                 <a href="">Other</a>{" "}
                               </label>
@@ -257,7 +257,7 @@ export default function MatchCriteria() {
                         <fieldset className="form-check-inline">
                           <label
                             className="control-label  col-sm-4  col-lg-4"
-                            for="income"
+                            htmlFor="income"
                           >
                             Annual Income
                           </label>
@@ -268,7 +268,7 @@ export default function MatchCriteria() {
                                 name="Less Than"
                                 id="Less-Than"
                               />
-                              <label for="Less-Than">
+                              <label htmlFor="Less-Than">
                                 {" "}
                                 <a href="">Less Than $25,000</a>{" "}
                               </label>
@@ -279,7 +279,7 @@ export default function MatchCriteria() {
                                 name="Less-Than-3"
                                 id="Less-Than-3"
                               />
-                              <label for="Less-Than-3">
+                              <label htmlFor="Less-Than-3">
                                 {" "}
                                 <a href="">$25,001 to $35,000</a>{" "}
                               </label>
@@ -289,7 +289,7 @@ export default function MatchCriteria() {
                         <fieldset className="form-check-inline">
                           <label
                             className="control-label col-sm-4  col-lg-4"
-                            for="income"
+                            htmlFor="income"
                           >
                             Education
                           </label>
@@ -300,7 +300,7 @@ export default function MatchCriteria() {
                                 name="High-School"
                                 id="High-School"
                               />
-                              <label for="High-School">
+                              <label htmlFor="High-School">
                                 {" "}
                                 <a href="">High School</a>{" "}
                               </label>
@@ -311,7 +311,7 @@ export default function MatchCriteria() {
                                 name="Bachelors"
                                 id="Bachelors"
                               />
-                              <label for="Bachelors">
+                              <label htmlFor="Bachelors">
                                 {" "}
                                 <a href="">Bachelors</a>{" "}
                               </label>
@@ -340,7 +340,7 @@ export default function MatchCriteria() {
                         <fieldset className="form-check-inline">
                           <label
                             className="control-label col-sm-4  col-lg-4"
-                            for="Religin"
+                            htmlFor="Religin"
                           >
                             Religion
                           </label>
@@ -351,7 +351,7 @@ export default function MatchCriteria() {
                                 name="Muslim"
                                 id="Muslim"
                               />
-                              <label for="Muslim">
+                              <label htmlFor="Muslim">
                                 {" "}
                                 <a href="">Muslim</a>{" "}
                               </label>
@@ -361,7 +361,7 @@ export default function MatchCriteria() {
                         <fieldset className="form-check-inline">
                           <label
                             className="control-labe col-sm-4  col-lg-4"
-                            for="Languages"
+                            htmlFor="Languages"
                           >
                             Languages
                           </label>
@@ -372,7 +372,7 @@ export default function MatchCriteria() {
                                 name="Arabic"
                                 id="Arabic"
                               />
-                              <label for="Arabic">
+                              <label htmlFor="Arabic">
                                 {" "}
                                 <a href="">Arabic</a>{" "}
                               </label>
@@ -383,7 +383,7 @@ export default function MatchCriteria() {
                                 name="Hebrew"
                                 id="Hebrew"
                               />
-                              <label for="Hebrew">
+                              <label htmlFor="Hebrew">
                                 {" "}
                                 <a href="">Hebrew</a>{" "}
                               </label>
@@ -394,14 +394,14 @@ export default function MatchCriteria() {
                                 name="Russian"
                                 id="Russian"
                               />
-                              <label for="Russian">
+                              <label htmlFor="Russian">
                                 {" "}
                                 <a href="">Russian</a>{" "}
                               </label>
                             </div>
                             <div className="i-agree inline text_13 span3">
                               <input type="checkbox" name="Other" id="Other2" />
-                              <label for="Other2">
+                              <label htmlFor="Other2">
                                 {" "}
                                 <a href="">Other</a>{" "}
                               </label>
@@ -410,7 +410,7 @@ export default function MatchCriteria() {
                         </fieldset>
                         <fieldset className="form-check-inline">
                           <label
-                            for="country"
+                            htmlFor="country"
                             className="control-label col-sm-4  col-lg-4"
                           >
                             Country
@@ -428,7 +428,7 @@ export default function MatchCriteria() {
                         </fieldset>
                         <fieldset className="form-check-inline">
                           <label
-                            for="state"
+                            htmlFor="state"
                             className="control-label col-sm-4  col-lg-4"
                           >
                             State
@@ -468,7 +468,7 @@ export default function MatchCriteria() {
                         <fieldset className="form-check-inline">
                           <label
                             className="control-label col-sm-4  col-lg-4"
-                            for="Religin"
+                            htmlFor="Religin"
                           >
                             Status in USA
                           </label>
@@ -479,7 +479,7 @@ export default function MatchCriteria() {
                                 name="Citizen"
                                 id="Citizen"
                               />
-                              <label for="Citizen">
+                              <label htmlFor="Citizen">
                                 {" "}
                                 <a href="">Citizen</a>{" "}
                               </label>
@@ -490,7 +490,7 @@ export default function MatchCriteria() {
                                 name="Resident Alien"
                                 id="ResidentAlien"
                               />
-                              <label for="ResidentAlien">
+                              <label htmlFor="ResidentAlien">
                                 {" "}
                                 <a href="">Resident Alien</a>{" "}
                               </label>
@@ -501,14 +501,14 @@ export default function MatchCriteria() {
                                 name="Student-Visa"
                                 id="Student-Visa"
                               />
-                              <label for="Student-Visa">
+                              <label htmlFor="Student-Visa">
                                 {" "}
                                 <a href="">Student Visa</a>{" "}
                               </label>
                             </div>
                             <div className="i-agree inline text_13 span3">
                               <input type="checkbox" name="Other" id="Other1" />
-                              <label for="Other1">
+                              <label htmlFor="Other1">
                                 {" "}
                                 <a href="">Other</a>{" "}
                               </label>
@@ -520,7 +520,7 @@ export default function MatchCriteria() {
                           id="other_status_usa_area"
                         >
                           <label
-                            for="other_status_usa"
+                            htmlFor="other_status_usa"
                             className="control-label col-sm-4  col-lg-4"
                           >
                             Other Status in USA
@@ -538,7 +538,7 @@ export default function MatchCriteria() {
                         <fieldset className="form-check-inline">
                           <label
                             className="control-label col-sm-4  col-lg-4"
-                            for="Religin"
+                            htmlFor="Religin"
                           >
                             Marital Status
                           </label>
@@ -549,7 +549,7 @@ export default function MatchCriteria() {
                                 name="Never-Married"
                                 id="Never-Married"
                               />
-                              <label for="Never-Married">
+                              <label htmlFor="Never-Married">
                                 {" "}
                                 <a href="">Never Married</a>{" "}
                               </label>
@@ -560,7 +560,7 @@ export default function MatchCriteria() {
                                 name="Divorced"
                                 id="Divorced"
                               />
-                              <label for="Divorced">
+                              <label htmlFor="Divorced">
                                 {" "}
                                 <a href="">Divorced</a>{" "}
                               </label>
@@ -571,7 +571,7 @@ export default function MatchCriteria() {
                                 name="Widow/Widower"
                                 id="Widow/Widower"
                               />
-                              <label for="Widow/Widower">
+                              <label htmlFor="Widow/Widower">
                                 {" "}
                                 <a href="">Widow/Widower</a>{" "}
                               </label>
@@ -580,7 +580,7 @@ export default function MatchCriteria() {
                         </fieldset>
                         <fieldset className="form-check-inline">
                           <label
-                            for="children"
+                            htmlFor="children"
                             className="control-label col-sm-4  col-lg-4"
                           >
                             Want Children
@@ -598,7 +598,7 @@ export default function MatchCriteria() {
                         </fieldset>
                         <fieldset className="form-check-inline">
                           <label
-                            for="Hchildren"
+                            htmlFor="Hchildren"
                             className="control-label col-sm-4  col-lg-4"
                           >
                             Have Children
@@ -615,7 +615,7 @@ export default function MatchCriteria() {
                         </fieldset>
                         <fieldset className="form-check-inline">
                           <label
-                            for="Smokes"
+                            htmlFor="Smokes"
                             className="control-label col-sm-4  col-lg-4"
                           >
                             Smokes
@@ -632,7 +632,7 @@ export default function MatchCriteria() {
                         </fieldset>
                         <fieldset className="form-check-inline">
                           <label
-                            for="pics"
+                            htmlFor="pics"
                             className="control-label col-sm-4  col-lg-4"
                           >
                             With Pics Only

@@ -22,7 +22,7 @@ export default function EditProfile() {
                   <fieldset className="form-check-inline required">
                     <label
                       className="control-label col-sm-4  col-lg-4"
-                      for="Dname"
+                      htmlFor="Dname"
                     >
                       Display Name
                     </label>
@@ -46,7 +46,7 @@ export default function EditProfile() {
                   <fieldset className="form-check-inline">
                     <label
                       className="control-label col-sm-4  col-lg-4"
-                      for="image"
+                      htmlFor="image"
                     >
                       Profile Image
                     </label>
@@ -59,7 +59,7 @@ export default function EditProfile() {
                         />
                         <label
                           className="custom-file-label"
-                          for="inputGroupFile02"
+                          htmlFor="inputGroupFile02"
                         >
                           Choose file
                         </label>
@@ -81,7 +81,7 @@ export default function EditProfile() {
                   <fieldset className="form-check-inline required">
                     <label
                       className="control-label col-sm-4     col-lg-4"
-                      for="first_name"
+                      htmlFor="first_name"
                     >
                       First Name
                     </label>
@@ -97,7 +97,7 @@ export default function EditProfile() {
                   <fieldset className="form-check-inline  required">
                     <label
                       className="control-label col-sm-4  col-lg-4"
-                      for="last_name"
+                      htmlFor="last_name"
                     >
                       Last Name
                     </label>
@@ -112,7 +112,7 @@ export default function EditProfile() {
                   </fieldset>
                   <fieldset className="form-check-inline ">
                     <label
-                      for="gender"
+                      htmlFor="gender"
                       className="control-label col-sm-4  col-lg-4"
                     >
                       Gender
@@ -134,7 +134,7 @@ export default function EditProfile() {
                   </fieldset>
                   <fieldset className="form-check-inline  required d_o_b">
                     <label
-                      for="DB"
+                      htmlFor="DB"
                       className="control-label col-sm-4  col-lg-4"
                     >
                       Date of Birth
@@ -155,7 +155,7 @@ export default function EditProfile() {
                   </fieldset>
                   <fieldset className="form-check-inline  required">
                     <label
-                      for="country"
+                      htmlFor="country"
                       className="control-label col-sm-4  col-lg-4"
                     >
                       Country
@@ -175,7 +175,7 @@ export default function EditProfile() {
                   </fieldset>
                   <fieldset className="form-check-inline  required">
                     <label
-                      for="state"
+                      htmlFor="state"
                       className="control-label col-sm-4  col-lg-4"
                     >
                       State
@@ -204,7 +204,7 @@ export default function EditProfile() {
                   </fieldset>
                   <fieldset className="form-check-inline  required">
                     <label
-                      for="city"
+                      htmlFor="city"
                       className="control-label col-sm-4  col-lg-4"
                     >
                       City
@@ -212,7 +212,7 @@ export default function EditProfile() {
 
                     <input
                       type="text"
-                      maxlength="50"
+                      maxLength="50"
                       name="city"
                       className="col-sm-8 col-lg-8 form-control"
                       value="New York"
@@ -222,7 +222,7 @@ export default function EditProfile() {
                   </fieldset>
                   <fieldset className="form-check-inline  required">
                     <label
-                      for="zip"
+                      htmlFor="zip"
                       className="control-label col-sm-4  col-lg-4"
                     >
                       Zip Code
@@ -230,7 +230,7 @@ export default function EditProfile() {
 
                     <input
                       type="text"
-                      maxlength="20"
+                      maxLength="20"
                       className="col-sm-8 col-lg-8 form-control"
                       name="zip_code"
                       value="10001"
@@ -240,7 +240,7 @@ export default function EditProfile() {
                   </fieldset>
                   <fieldset className="form-check-inline  required">
                     <label
-                      for="phone"
+                      htmlFor="phone"
                       className="control-label col-sm-4  col-lg-4"
                     >
                       Phone
@@ -261,7 +261,7 @@ export default function EditProfile() {
                   <h4 className="hbb">Personal Information</h4>
                   <fieldset className="form-check-inline  required">
                     <label
-                      for="height"
+                      htmlFor="height"
                       className="control-label col-sm-4  col-lg-4"
                     >
                       Height
@@ -273,18 +273,18 @@ export default function EditProfile() {
                       className="col-sm-8 col-lg-8 form-control"
                     >
                       <option value="0">Select One</option>
-                      <option value="1">3'0"(91cm)</option>
-                      <option value="2">3'1"(93cm)</option>
-                      <option value="3">3'2"(96cm)</option>
-                      <option value="4">3'3"(99cm)</option>
-                      <option value="5">3'4"(101cm)</option>
-                      <option value="6">3'5"(104cm)</option>
-                      <option value="7">3'6"(106cm)</option>
+                      <option value="1">3(91cm)</option>
+                      <option value="2">3(93cm)</option>
+                      <option value="3">3(96cm)</option>
+                      <option value="4">3(99cm)</option>
+                      <option value="5">3(101cm)</option>
+                      <option value="6">3(104cm)</option>
+                      <option value="7">3(106cm)</option>
                     </select>
                   </fieldset>
                   <fieldset className="form-check-inline  required">
                     <label
-                      for="Ecolor"
+                      htmlFor="Ecolor"
                       className="control-label col-sm-4  col-lg-4"
                     >
                       Eye Color
@@ -307,7 +307,7 @@ export default function EditProfile() {
                   </fieldset>
                   <fieldset className="form-check-inline  required">
                     <label
-                      for="Hcolor"
+                      htmlFor="Hcolor"
                       className="control-label col-sm-4  col-lg-4"
                     >
                       Hair Color
@@ -335,7 +335,7 @@ export default function EditProfile() {
                   </fieldset>
                   <fieldset className="form-check-inline  required">
                     <label
-                      for="bType"
+                      htmlFor="bType"
                       className="control-label col-sm-4  col-lg-4"
                     >
                       Body Type
@@ -359,7 +359,7 @@ export default function EditProfile() {
                   <h4 className="hbb">Professional Information</h4>
                   <fieldset className="form-check-inline  required">
                     <label
-                      for="profession"
+                      htmlFor="profession"
                       className="control-label col-sm-4  col-lg-4"
                     >
                       Profession
@@ -390,7 +390,7 @@ export default function EditProfile() {
                     id="other_profession_area"
                   >
                     <label
-                      for="other_profession"
+                      htmlFor="other_profession"
                       className="control-label col-sm-4  col-lg-4"
                     >
                       Other Profession
@@ -408,7 +408,7 @@ export default function EditProfile() {
                   </fieldset>
                   <fieldset className="form-check-inline  required">
                     <label
-                      for="aIncome"
+                      htmlFor="aIncome"
                       className="control-label col-sm-4  col-lg-4"
                     >
                       Annual Income
@@ -431,7 +431,7 @@ export default function EditProfile() {
                   </fieldset>
                   <fieldset className="form-check-inline  required">
                     <label
-                      for="education"
+                      htmlFor="education"
                       className="control-label col-sm-4  col-lg-4"
                     >
                       Education
@@ -459,7 +459,7 @@ export default function EditProfile() {
                     id="other_education_area"
                   >
                     <label
-                      for="other_education"
+                      htmlFor="other_education"
                       className="control-label col-sm-4  col-lg-4"
                     >
                       Other Education
@@ -480,7 +480,7 @@ export default function EditProfile() {
                   <h4 className="hbb">Background Information</h4>
                   <fieldset className="form-check-inline  required">
                     <label
-                      for="origin"
+                      htmlFor="origin"
                       className="control-label col-sm-4  col-lg-4"
                     >
                       Country of Origin
@@ -503,7 +503,7 @@ export default function EditProfile() {
                   </fieldset>
                   <fieldset className="form-check-inline  required">
                     <label
-                      for="religion"
+                      htmlFor="religion"
                       className="control-label col-sm-4  col-lg-4"
                     >
                       Religion
@@ -520,7 +520,7 @@ export default function EditProfile() {
                   </fieldset>
                   <fieldset className="form-check-inline  required">
                     <label
-                      for="usa_status"
+                      htmlFor="usa_status"
                       className="control-label col-sm-4  col-lg-4"
                     >
                       Status in USA
@@ -543,7 +543,7 @@ export default function EditProfile() {
                     id="other_status_usa_area"
                   >
                     <label
-                      for="other_status_usa"
+                      htmlFor="other_status_usa"
                       className="control-label col-sm-4  col-lg-4"
                     >
                       Other Status in USA
@@ -556,12 +556,12 @@ export default function EditProfile() {
                       className="col-sm-8 col-lg-8 form-control"
                       placeholder="Other Status in USA"
                       value=""
-                      readonly
+                      readOnly
                     />
                   </fieldset>
                   <fieldset className="form-check-inline">
                     <label
-                      for="color"
+                      htmlFor="color"
                       className="control-label col-sm-4  col-lg-4 message"
                     >
                       My Language<span style={{ color: "red" }}> *</span>
@@ -573,21 +573,21 @@ export default function EditProfile() {
                     <div className="row d-flex justify-content-between">
                       <div className="i-agree inline text_13 span3">
                         <input type="checkbox" name="Arabic" id="Arabic" />
-                        <label for="Arabic">
+                        <label htmlFor="Arabic">
                           {" "}
                           <a href="">Arabic </a>{" "}
                         </label>
                       </div>
                       <div className="i-agree inline text_13 span3">
                         <input type="checkbox" name="Hebrew" id="Hebrew" />
-                        <label for="Hebrew">
+                        <label htmlFor="Hebrew">
                           {" "}
                           <a href="">Hebrew </a>{" "}
                         </label>
                       </div>
                       <div className="i-agree inline text_13 span3">
                         <input type="checkbox" name="Russian" id="Russian" />
-                        <label for="Russian">
+                        <label htmlFor="Russian">
                           {" "}
                           <a href="">Russian </a>{" "}
                         </label>
@@ -599,7 +599,7 @@ export default function EditProfile() {
                   <h4 className="hbb">Other Information</h4>
                   <fieldset className="form-check-inline  required">
                     <label
-                      for="marital_status"
+                      htmlFor="marital_status"
                       className="control-label col-sm-4  col-lg-4"
                     >
                       Marital Status
@@ -617,7 +617,7 @@ export default function EditProfile() {
                   </fieldset>
                   <fieldset className="form-check-inline  required">
                     <label
-                      for="want_childern"
+                      htmlFor="want_childern"
                       className="control-label col-sm-4  col-lg-4"
                     >
                       Want Children
@@ -635,7 +635,7 @@ export default function EditProfile() {
                   </fieldset>
                   <fieldset className="form-check-inline  required">
                     <label
-                      for="have_children"
+                      htmlFor="have_children"
                       className="control-label col-sm-4  col-lg-4"
                     >
                       Have Children
@@ -652,7 +652,7 @@ export default function EditProfile() {
                   </fieldset>
                   <fieldset className="form-check-inline  required">
                     <label
-                      for="smoke"
+                      htmlFor="smoke"
                       className="control-label col-sm-4  col-lg-4"
                     >
                       Smoke?
@@ -669,7 +669,7 @@ export default function EditProfile() {
                   </fieldset>
                   <fieldset className="form-check-inline  required ">
                     <label
-                      for="message"
+                      htmlFor="message"
                       className="control-label col-sm-4  col-lg-4 message"
                     >
                       Message{" "}
@@ -693,10 +693,10 @@ export default function EditProfile() {
                   </fieldset>
                   <fieldset className="form-check-inline  required">
                     <label
-                      for="partner_qualities"
+                      htmlFor="partner_qualities"
                       className="control-label col-sm-4  col-lg-4 message"
                     >
-                      Desired Partner's Qualities{" "}
+                      Desired Partner Qualities{" "}
                       <small className="lable_caption">(Max 500 Chars)</small>
                     </label>
                     <textarea
@@ -709,7 +709,7 @@ export default function EditProfile() {
                   <fieldset className="form-check-inline">
                     <label
                       className="control-label col-sm-4  col-lg-4"
-                      for="disability"
+                      htmlFor="disability"
                     >
                       State Disablity <small>(if any)</small>
                     </label>
@@ -727,7 +727,7 @@ export default function EditProfile() {
                   <h4 className="hbb">Referral Information</h4>
                   <fieldset className="form-check-inline">
                     <label
-                      for="mStatus"
+                      htmlFor="mStatus"
                       className="control-label col-sm-4  col-lg-4"
                     >
                       &nbsp;
@@ -735,7 +735,7 @@ export default function EditProfile() {
                     <div className="controls">
                       <div className="i-agree inline text_13 ">
                         <input type="checkbox" name="plz-chk" id="plz-chk" />
-                        <label for="plz-chk">
+                        <label htmlFor="plz-chk">
                           {" "}
                           <a href="">
                             Please check this if this account is for someone
@@ -749,7 +749,7 @@ export default function EditProfile() {
                     <fieldset className="form-check-inline  required">
                       <label
                         className="control-label col-sm-4  col-lg-4"
-                        for="guardian_name"
+                        htmlFor="guardian_name"
                       >
                         Name
                       </label>
@@ -766,7 +766,7 @@ export default function EditProfile() {
                     <fieldset className="form-check-inline  required">
                       <label
                         className="control-label col-sm-4  col-lg-4"
-                        for="relation"
+                        htmlFor="relation"
                       >
                         Relation With The Person
                       </label>
@@ -777,7 +777,7 @@ export default function EditProfile() {
                         placeholder="Relation"
                         value=""
                         className="col-sm-8 col-lg-8 form-control"
-                        readonly
+                        readOnly
                       />{" "}
                     </fieldset>
                   </div>
@@ -786,7 +786,7 @@ export default function EditProfile() {
                   <h4 className="hbb">References Information</h4>
                   <fieldset className="form-check-inline">
                     <label
-                      for="firs_referance"
+                      htmlFor="firs_referance"
                       className="control-label col-sm-4  col-lg-4"
                     >
                       First Reference
@@ -803,7 +803,7 @@ export default function EditProfile() {
                         />
                         &nbsp;&nbsp;
                         <label
-                          for="first_referance_name"
+                          htmlFor="first_referance_name"
                           generated="true"
                           className="error"
                           style={{ display: "none" }}
@@ -820,7 +820,7 @@ export default function EditProfile() {
                           value=""
                         />
                         <label
-                          for="first_contact_num"
+                          htmlFor="first_contact_num"
                           generated="true"
                           className="error"
                           style={{ display: "none" }}
@@ -835,7 +835,7 @@ export default function EditProfile() {
                   </fieldset>
                   <fieldset className="form-check-inline">
                     <label
-                      for="second_referance"
+                      htmlFor="second_referance"
                       className="control-label col-sm-4  col-lg-4"
                     >
                       Second Reference
@@ -852,7 +852,7 @@ export default function EditProfile() {
                         />
                         &nbsp;&nbsp;
                         <label
-                          for="second_referance_name"
+                          htmlFor="second_referance_name"
                           generated="true"
                           className="error"
                           style={{ display: "none" }}
@@ -869,7 +869,7 @@ export default function EditProfile() {
                           value=""
                         />
                         <label
-                          for="second_contact_num"
+                          htmlFor="second_contact_num"
                           generated="true"
                           className="error"
                           style={{ display: "none" }}
@@ -888,7 +888,7 @@ export default function EditProfile() {
                   <fieldset className="form-check-inline mt-2">
                     <div className="i-agree inline text_13 ">
                       <input type="checkbox" name="uncheck" id="uncheck" />
-                      <label for="uncheck">
+                      <label htmlFor="uncheck">
                         {" "}
                         <a href="">
                           If you uncheck this your profile will not appear in

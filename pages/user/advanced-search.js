@@ -43,7 +43,7 @@ export default function AdvancedSearch() {
             <fieldset className="form-check-inline ">
               <div className="row w-100">
                 <div className="col-lg-3">
-                  <label className="control-label " for="age">
+                  <label className="control-label " htmlFor="age">
                     Age Range
                   </label>
                 </div>
@@ -59,8 +59,8 @@ export default function AdvancedSearch() {
                         }}
                       >
                         <option value="0">From</option>
-                        {array.map((element) => {
-                          return <option value={element}>{element}</option>;
+                        {array.map((element,index) => {
+                          return <option value={element} key={index}>{element}</option>;
                         })}
                       </select>
                     </div>
@@ -74,8 +74,8 @@ export default function AdvancedSearch() {
                         <option value="0">To</option>
                         {array
                           .filter((age) => age >= minAge)
-                          .map((element) => {
-                            return <option value={element}>{element}</option>;
+                          .map((element, index) => {
+                            return <option value={element} key={index}>{element}</option>;
                           })}
                       </select>
                     </div>
@@ -86,7 +86,7 @@ export default function AdvancedSearch() {
             <fieldset className="form-check-inline ">
               <div className="row w-100">
                 <div className="col-lg-3">
-                  <label className="control-label" for="height">
+                  <label className="control-label" htmlFor="height">
                     Height Range
                   </label>
                 </div>
@@ -95,17 +95,16 @@ export default function AdvancedSearch() {
                     <div className="col-lg-6">
                       <select
                         name="height_from"
-                        className="form-control d-block w-100"
+                        className="form-control d-block w-100 span2"
                         id="height_from"
-                        className="span2"
                         onChange={(e) => {
                           setMinHeight(e.target.value);
                         }}
                       >
                         <option value="0">From</option>
-                        {height.map((element) => {
+                        {height.map((element , index) => {
                           return (
-                            <option value={element.key}>{element.value}</option>
+                            <option value={element.key} key={index}>{element.value}</option>
                           );
                         })}
                       </select>
@@ -113,9 +112,8 @@ export default function AdvancedSearch() {
                     <div className="col-lg-6">
                       <select
                         name="height_to"
-                        className="form-control d-block w-100"
+                        className="form-control d-block w-100 span2"
                         id="height_to"
-                        className="span2"
                       >
                         <option value="0">To</option>
                         {height
@@ -123,9 +121,9 @@ export default function AdvancedSearch() {
                             (height) =>
                               parseFloat(height.key) >= parseFloat(minHeight)
                           )
-                          .map((element) => {
+                          .map((element ,index) => {
                             return (
-                              <option value={element.key}>
+                              <option value={element.key} key={index}>
                                 {element.value}
                               </option>
                             );
@@ -137,7 +135,7 @@ export default function AdvancedSearch() {
               </div>
             </fieldset>
             <fieldset className="form-check-inline ">
-              <label className="control-label col-sm-4  col-lg-3" for="color">
+              <label className="control-label col-sm-4  col-lg-3" htmlFor="color">
                 Eye Color
               </label>
               <div className="row justify-content-start flex-wrap pr-2 w-100">
@@ -156,15 +154,15 @@ export default function AdvancedSearch() {
                       // console.log(e.target.value);
                     }}
                   />
-                  <label for="Black">Black</label>
+                  <label htmlFor="Black">Black</label>
                 </div>
                 <div className="i-agree inline text_13 span3">
                   <input type="checkbox" name="Blue" id="Blue" />
-                  <label for="Blue">Blue</label>
+                  <label htmlFor="Blue">Blue</label>
                 </div>
                 <div className="i-agree inline text_13 span3">
                   <input type="checkbox" name="Brown" id="Brown" />
-                  <label for="Brown"> Brown </label>
+                  <label htmlFor="Brown"> Brown </label>
                 </div>
                 <div className="i-agree inline text_13 span3">
                   <input
@@ -172,51 +170,51 @@ export default function AdvancedSearch() {
                     name="Colored-contacts"
                     id="Colored-contacts"
                   />
-                  <label for="Colored-contacts"> Colored contacts </label>
+                  <label htmlFor="Colored-contacts"> Colored contacts </label>
                 </div>
                 <div className="i-agree inline text_13 span3">
                   <input type="checkbox" name="Green" id="Green" />
-                  <label for="Green"> Green </label>
+                  <label htmlFor="Green"> Green </label>
                 </div>
                 <div className="i-agree inline text_13 span3">
                   <input type="checkbox" name="Grey" id="Grey" />
-                  <label for="Grey"> Grey </label>
+                  <label htmlFor="Grey"> Grey </label>
                 </div>
                 <div className="i-agree inline text_13 span3">
                   <input type="checkbox" name="Hazel" id="Hazel" />
-                  <label for="Hazel"> Hazel </label>
+                  <label htmlFor="Hazel"> Hazel </label>
                 </div>
               </div>
             </fieldset>
             <fieldset className="form-check-inline">
-              <label className="control-label col-sm-4  col-lg-3" for="Hcolor">
+              <label className="control-label col-sm-4  col-lg-3" htmlFor="Hcolor">
                 Hair Color
               </label>
               <div className="row justify-content-start flex-wrap pr-2 w-100">
                 <div className="i-agree inline text_13 span3">
                   <input type="checkbox" name="Auburn-Red" id="Auburn_Red" />
-                  <label for="Auburn-Red">
+                  <label htmlFor="Auburn-Red">
                     {" "}
                     <a href="">Auburn/Red </a>{" "}
                   </label>
                 </div>
                 <div className="i-agree inline text_13 span3">
                   <input type="checkbox" name="Bald" id="Bald" />
-                  <label for="Bald">
+                  <label htmlFor="Bald">
                     {" "}
                     <a href="">Bald</a>{" "}
                   </label>
                 </div>
                 <div className="i-agree inline text_13 span3">
                   <input type="checkbox" name="Black_1" id="Black_1" />
-                  <label for="Black_1">
+                  <label htmlFor="Black_1">
                     {" "}
                     <a href="">Black</a>{" "}
                   </label>
                 </div>
                 <div className="i-agree inline text_13 span3">
                   <input type="checkbox" name="Blonde" id="Blonde" />
-                  <label for="Blonde">
+                  <label htmlFor="Blonde">
                     {" "}
                     <a href="">Blonde</a>{" "}
                   </label>
@@ -224,20 +222,20 @@ export default function AdvancedSearch() {
               </div>
             </fieldset>
             <fieldset className="form-check-inline">
-              <label className="control-label col-sm-4  col-lg-3" for="Build">
+              <label className="control-label col-sm-4  col-lg-3" htmlFor="Build">
                 Build
               </label>
               <div className="row justify-content-start flex-wrap pr-2 w-100">
                 <div className="i-agree inline text_13 span3">
                   <input type="checkbox" name="Slim" id="Slim" />
-                  <label for="Slim">
+                  <label htmlFor="Slim">
                     {" "}
                     <a href="">Slim</a>{" "}
                   </label>
                 </div>
                 <div className="i-agree inline text_13 span3">
                   <input type="checkbox" name="Athletic" id="Athletic" />
-                  <label for="Athletic">
+                  <label htmlFor="Athletic">
                     {" "}
                     <a href="">Athletic</a>{" "}
                   </label>
@@ -248,7 +246,7 @@ export default function AdvancedSearch() {
                     name="About-average"
                     id="About-average"
                   />
-                  <label for="About-average">
+                  <label htmlFor="About-average">
                     {" "}
                     <a href="">About average</a>{" "}
                   </label>
@@ -259,7 +257,7 @@ export default function AdvancedSearch() {
                     name="Few-extra-pounds"
                     id="Few-extra-pounds"
                   />
-                  <label for="Few-extra-pounds">
+                  <label htmlFor="Few-extra-pounds">
                     {" "}
                     <a href="">Few extra pounds</a>{" "}
                   </label>
@@ -270,7 +268,7 @@ export default function AdvancedSearch() {
                     name="Full-Figured"
                     id="Full-Figured"
                   />
-                  <label for="Full-Figured">
+                  <label htmlFor="Full-Figured">
                     {" "}
                     <a href="">Full Figured</a>{" "}
                   </label>
@@ -295,7 +293,7 @@ export default function AdvancedSearch() {
             data-parent="#accordion"
           >
             <fieldset className="form-check-inline">
-              <label className="control-label col-sm-4  col-lg-3" for="work">
+              <label className="control-label col-sm-4  col-lg-3" htmlFor="work">
                 Profession
               </label>
               <div className="row justify-content-start flex-wrap pr-2 w-100">
@@ -305,21 +303,21 @@ export default function AdvancedSearch() {
                     name="Medical-Doctor"
                     id="Medical-Doctor"
                   />
-                  <label for="Medical-Doctor">
+                  <label htmlFor="Medical-Doctor">
                     {" "}
                     <a href="">Medical Doctor</a>{" "}
                   </label>
                 </div>
                 <div className="i-agree inline text_13 span3">
                   <input type="checkbox" name="Dentist" id="Dentist" />
-                  <label for="Dentist">
+                  <label htmlFor="Dentist">
                     {" "}
                     <a href="">Dentist</a>{" "}
                   </label>
                 </div>
                 <div className="i-agree inline text_13 span3">
                   <input type="checkbox" name="Other" id="Other" />
-                  <label for="Other">
+                  <label htmlFor="Other">
                     {" "}
                     <a href="">Other</a>{" "}
                   </label>
@@ -327,20 +325,20 @@ export default function AdvancedSearch() {
               </div>
             </fieldset>
             <fieldset className="form-check-inline">
-              <label className="control-label col-sm-4  col-lg-3" for="income">
+              <label className="control-label col-sm-4  col-lg-3" htmlFor="income">
                 Annual Income
               </label>
               <div className="row justify-content-start flex-wrap pr-2 w-100">
                 <div className="i-agree inline text_13 span3">
                   <input type="checkbox" name="Less-Than" id="Less-Than" />
-                  <label for="Less-Than">
+                  <label htmlFor="Less-Than">
                     {" "}
                     <a href="">Less Than $25,000</a>{" "}
                   </label>
                 </div>
                 <div className="i-agree inline text_13 span3">
                   <input type="checkbox" name="Less-Than-1" id="Less-Than-1" />
-                  <label for="Less-Than-1">
+                  <label htmlFor="Less-Than-1">
                     {" "}
                     <a href="">$25,001 to $35,000</a>{" "}
                   </label>
@@ -348,27 +346,27 @@ export default function AdvancedSearch() {
               </div>
             </fieldset>
             <fieldset className="form-check-inline">
-              <label className="control-label col-sm-4  col-lg-3" for="income">
+              <label className="control-label col-sm-4  col-lg-3" htmlFor="income">
                 Education
               </label>
               <div className="row justify-content-start flex-wrap pr-2 w-100">
                 <div className="i-agree inline text_13 span3">
                   <input type="checkbox" name="High-School" id="High-School" />
-                  <label for="High-School">
+                  <label htmlFor="High-School">
                     {" "}
                     <a href="">High School</a>{" "}
                   </label>
                 </div>
                 <div className="i-agree inline text_13 span3">
                   <input type="checkbox" name="Bachelors" id="Bachelors" />
-                  <label for="Bachelors">
+                  <label htmlFor="Bachelors">
                     {" "}
                     <a href="">Bachelors</a>{" "}
                   </label>
                 </div>
                 <div className="i-agree inline text_13 span3">
                   <input type="checkbox" name="Masters" id="Masters" />
-                  <label for="Masters">
+                  <label htmlFor="Masters">
                     {" "}
                     <a href="">Masters</a>{" "}
                   </label>
@@ -396,14 +394,14 @@ export default function AdvancedSearch() {
               <fieldset className="form-check-inline">
                 <label
                   className="control-label col-sm-4  col-lg-3"
-                  for="Religin"
+                  htmlFor="Religin"
                 >
                   Religion
                 </label>
                 <div className="row justify-content-start flex-wrap pr-2 w-100">
                   <div className="i-agree inline text_13 span3">
                     <input type="checkbox" name="Muslim" id="Muslim" />
-                    <label for="Muslim">
+                    <label htmlFor="Muslim">
                       {" "}
                       <a href="">Muslim</a>{" "}
                     </label>
@@ -413,119 +411,119 @@ export default function AdvancedSearch() {
               <fieldset className="form-check-inline">
                 <label
                   className="control-label col-sm-4  col-lg-3"
-                  for="Languages"
+                  htmlFor="Languages"
                 >
                   Languages
                 </label>
                 <div className="row justify-content-start flex-wrap pr-2 w-100">
                   <div className="i-agree inline text_13 span3">
                     <input type="checkbox" name="Arabic" id="Arabic" />
-                    <label for="Arabic">
+                    <label htmlFor="Arabic">
                       {" "}
                       <a href="">Arabic</a>{" "}
                     </label>
                   </div>
                   <div className="i-agree inline text_13 span3">
                     <input type="checkbox" name="Hebrew" id="Hebrew" />
-                    <label for="Hebrew">
+                    <label htmlFor="Hebrew">
                       {" "}
                       <a href="">Hebrew</a>{" "}
                     </label>
                   </div>
                   <div className="i-agree inline text_13 span3">
                     <input type="checkbox" name="Russian" id="Russian" />
-                    <label for="Russian">
+                    <label htmlFor="Russian">
                       {" "}
                       <a href="">Russian</a>{" "}
                     </label>
                   </div>
                   <div className="i-agree inline text_13 span3">
                     <input type="checkbox" name="Chinese" id="Chinese" />
-                    <label for="Chinese">
+                    <label htmlFor="Chinese">
                       {" "}
                       <a href="">Chinese</a>{" "}
                     </label>
                   </div>
                   <div className="i-agree inline text_13 span3">
                     <input type="checkbox" name="Hindi" id="Hindi" />
-                    <label for="Hindi">
+                    <label htmlFor="Hindi">
                       {" "}
                       <a href="">Hindi</a>{" "}
                     </label>
                   </div>
                   <div className="i-agree inline text_13 span3">
                     <input type="checkbox" name="Spanish" id="Spanish" />
-                    <label for="Spanish">
+                    <label htmlFor="Spanish">
                       {" "}
                       <a href="">Spanish</a>{" "}
                     </label>
                   </div>
                   <div className="i-agree inline text_13 span3">
                     <input type="checkbox" name="Dutch" id="Dutch" />
-                    <label for="Dutch">
+                    <label htmlFor="Dutch">
                       {" "}
                       <a href="">Dutch</a>{" "}
                     </label>
                   </div>
                   <div className="i-agree inline text_13  span3  ">
                     <input type="checkbox" name="Italian" id="Italian" />
-                    <label for="Italian">
+                    <label htmlFor="Italian">
                       {" "}
                       <a href="">Italian</a>{" "}
                     </label>
                   </div>
                   <div className="i-agree inline text_13 ">
                     <input type="checkbox" name="Tagalong" id="Tagalong" />
-                    <label for="Tagalong">
+                    <label htmlFor="Tagalong">
                       {" "}
                       <a href="">Tagalong</a>{" "}
                     </label>
                   </div>
                   <div className="i-agree inline text_13 span3">
                     <input type="checkbox" name="English" id="English" />
-                    <label for="English">
+                    <label htmlFor="English">
                       {" "}
                       <a href="">English</a>{" "}
                     </label>
                   </div>
                   <div className="i-agree inline text_13 span3">
                     <input type="checkbox" name="Japanese" id="Japanese" />
-                    <label for="Japanese">
+                    <label htmlFor="Japanese">
                       {" "}
                       <a href="">Japanese</a>{" "}
                     </label>
                   </div>
                   <div className="i-agree inline text_13 span3">
                     <input type="checkbox" name="Urdu" id="Urdu" />
-                    <label for="Urdu">
+                    <label htmlFor="Urdu">
                       {" "}
                       <a href="">Urdu</a>{" "}
                     </label>
                   </div>
                   <div className="i-agree inline text_13 span3">
                     <input type="checkbox" name="French" id="French" />
-                    <label for="French">
+                    <label htmlFor="French">
                       {" "}
                       <a href="">French</a>{" "}
                     </label>
                   </div>
                   <div className="i-agree inline text_13 span3">
                     <input type="checkbox" name="Portuguese" id="Portuguese" />
-                    <label for="Portuguese">
+                    <label htmlFor="Portuguese">
                       {" "}
                       <a href="">Portuguese</a>{" "}
                     </label>
                   </div>
                   <div className="i-agree inline text_13  span3">
                     <input type="checkbox" name="German" id="German" />
-                    <label for="German">
+                    <label htmlFor="German">
                       {" "}
                       <a href="">German</a>{" "}
                     </label>
                   </div>
                   <div className="i-agree inline text_13 span3">
                     <input type="checkbox" name="Other" id="Other" />
-                    <label for="Other">
+                    <label htmlFor="Other">
                       {" "}
                       <a href="">Other</a>{" "}
                     </label>
@@ -534,7 +532,7 @@ export default function AdvancedSearch() {
               </fieldset>
               <fieldset className="form-check-inline">
                 <label
-                  for="country"
+                  htmlFor="country"
                   className="control-label col-sm-4  col-lg-3 pr-0"
                 >
                   Country
@@ -552,7 +550,7 @@ export default function AdvancedSearch() {
               </fieldset>
               <fieldset className="form-check-inline">
                 <label
-                  for="state"
+                  htmlFor="state"
                   className="control-label col-sm-4  col-lg-3 pr-0"
                 >
                   State
@@ -574,7 +572,7 @@ export default function AdvancedSearch() {
               </fieldset>
               <fieldset className="form-check-inline">
                 <label
-                  for="origin"
+                  htmlFor="origin"
                   className="control-label  col-sm-4  col-lg-3 pr-0"
                 >
                   Country of Origin
@@ -615,7 +613,7 @@ export default function AdvancedSearch() {
               <fieldset className="form-check-inline">
                 <label
                   className="control-label col-sm-4  col-lg-3"
-                  for="Religin"
+                  htmlFor="Religin"
                 >
                   Marital Status
                 </label>
@@ -626,14 +624,14 @@ export default function AdvancedSearch() {
                       name="Never-Married"
                       id="Never-Married"
                     />
-                    <label for="Never-Married">
+                    <label htmlFor="Never-Married">
                       {" "}
                       <a href="">Never Married</a>{" "}
                     </label>
                   </div>
                   <div className="i-agree inline text_13 span3">
                     <input type="checkbox" name="Divorced" id="Divorced" />
-                    <label for="Divorced">
+                    <label htmlFor="Divorced">
                       {" "}
                       <a href="">Divorced</a>{" "}
                     </label>
@@ -644,7 +642,7 @@ export default function AdvancedSearch() {
                       name="Widow/Widower"
                       id="Widow/Widower"
                     />
-                    <label for="Widow/Widower">
+                    <label htmlFor="Widow/Widower">
                       {" "}
                       <a href="">Widow/Widower</a>{" "}
                     </label>
@@ -653,7 +651,7 @@ export default function AdvancedSearch() {
               </fieldset>
               <fieldset className="form-check-inline">
                 <label
-                  for="children"
+                  htmlFor="children"
                   className="control-label col-sm-4  col-lg-3"
                 >
                   Want Children
@@ -671,7 +669,7 @@ export default function AdvancedSearch() {
               </fieldset>
               <fieldset className="form-check-inline">
                 <label
-                  for="Hchildren"
+                  htmlFor="Hchildren"
                   className="control-label col-sm-4  col-lg-3"
                 >
                   Have Children
@@ -688,7 +686,7 @@ export default function AdvancedSearch() {
               </fieldset>
               <fieldset className="form-check-inline">
                 <label
-                  for="Smokes"
+                  htmlFor="Smokes"
                   className="control-label col-sm-4  col-lg-3"
                 >
                   Smokes
@@ -700,7 +698,7 @@ export default function AdvancedSearch() {
                 </select>
               </fieldset>
               <fieldset className="form-check-inline">
-                <label for="pics" className="control-label col-sm-4  col-lg-3">
+                <label htmlFor="pics" className="control-label col-sm-4  col-lg-3">
                   With Pics Only
                 </label>
                 <select

@@ -1,7 +1,7 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Link from "next/link";
-<script src="https://unpkg.com/react-router-dom/umd/react-router-dom.min.js"></script>;
+<script async src="https://unpkg.com/react-router-dom/umd/react-router-dom.min.js"></script>;
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -366,7 +366,7 @@ export default function Home() {
               <h3>latest articles</h3>
               <p>
                 Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
+                industry. Lorem Ipsum has been the industrys standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled it to make a type specimen book. It has
                 survived not only five centuries, but also the leap into

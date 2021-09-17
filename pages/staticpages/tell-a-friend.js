@@ -31,7 +31,7 @@ export default function InviteFriend() {
                   <fieldset className="form-check-inline required align-items-start">
                     <label
                       className="control-label col-sm-4  col-lg-3"
-                      for="inputDate"
+                      htmlFor="inputDate"
                     >
                       To
                     </label>
@@ -51,7 +51,7 @@ export default function InviteFriend() {
                   <fieldset className="orm-check-inline required">
                     <label
                       className="control-label col-sm-4  col-lg-3"
-                      for="inputDate"
+                      htmlFor="inputDate"
                     >
                       Subject
                     </label>
@@ -68,7 +68,7 @@ export default function InviteFriend() {
                   <fieldset className="form-check-inline required">
                     <label
                       className="control-label col-sm-4  col-lg-3"
-                      for="inputDate"
+                      htmlFor="inputDate"
                     >
                       Message
                     </label>

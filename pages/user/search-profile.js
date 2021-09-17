@@ -70,7 +70,7 @@ export default function SearchProfile() {
       >
         <div className="search_inner d-flex flex-wrap  ">
           <fieldset className="control-group pull-left mr-10 mb-0">
-            <label for="sp-name" className="control-label">
+            <label htmlFor="sp-name" className="control-label">
               Nick Name
             </label>
             <input
@@ -83,7 +83,7 @@ export default function SearchProfile() {
             />
           </fieldset>
           <fieldset className="control-group pull-left mr-10 mb-0">
-            <label for="sp-minage" className="control-label">
+            <label htmlFor="sp-minage" className="control-label">
               Min Age
             </label>
 
@@ -96,13 +96,13 @@ export default function SearchProfile() {
               }}
             >
               <option value="0">From</option>
-              {array.map((element) => {
-                return <option value={element}>{element}</option>;
+              {array.map((element,index) => {
+                return <option value={element} key={index}>{element}</option>;
               })}
             </select>
           </fieldset>
           <fieldset className="control-group pull-left mr-10 mb-0">
-            <label for="sp-maxage" className="control-label">
+            <label htmlFor="sp-maxage" className="control-label">
               Max Age
             </label>
             <select
@@ -115,13 +115,13 @@ export default function SearchProfile() {
 
               {array
                 .filter((age) => age >= minAge)
-                .map((element) => {
-                  return <option value={element}>{element}</option>;
+                .map((element,index) => {
+                  return <option value={element} key={index}>{element}</option>;
                 })}
             </select>
           </fieldset>
           <fieldset className="control-group pull-left mr-10 mb-0">
-            <label for="sp-country" className="control-label">
+            <label htmlFor="sp-country" className="control-label">
               Country
             </label>
             <select
@@ -135,9 +135,9 @@ export default function SearchProfile() {
             >
               <option value="0"> Please Select Country</option>
               {countries.length > 0
-                ? countries.map((element) => {
+                ? countries.map((element,index) => {
                     return (
-                      <option value={element.country_name}>
+                      <option value={element.country_name} key={index}>
                         {element.country_name}
                       </option>
                     );
@@ -146,15 +146,15 @@ export default function SearchProfile() {
             </select>
           </fieldset>
           <fieldset className="control-group pull-left mr-10 mb-0">
-            <label for="sp-state" className="control-label">
+            <label htmlFor="sp-state" className="control-label">
               State
             </label>
             <select className="" name="state" id="state" required="">
               <option value="0"> Please Select State</option>
               {countryStates.length > 0
-                ? countryStates.map((countryState) => {
+                ? countryStates.map((countryState,index) => {
                     return (
-                      <option value={countryState.state_name}>
+                      <option value={countryState.state_name} key={index}>
                         {countryState.state_name}{" "}
                       </option>
                     );
@@ -163,12 +163,12 @@ export default function SearchProfile() {
             </select>
           </fieldset>
           {/* <fieldset className="control-group pull-left mr-10 mb-0">
-            <label for="sp-yes" className="control-label">
+            <label htmlFor="sp-yes" className="control-label">
               Photo
             </label>
             <div className="i-agree">
               <input type="checkbox" name="iagree_to" id="iagree_to" />
-              <label for="iagree_to">
+              <label htmlFor="iagree_to">
                 <a href="">yes </a>
               </label>
             </div>

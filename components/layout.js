@@ -1,6 +1,6 @@
 import Header from "./Includes/Header";
 import Footer from "./Includes/Footer";
-import WithAuth from "./HOC/WithAuth";
+// import WithAuth from "./HOC/WithAuth";
 const Layout = function ({ children }) {
   return (
     <div>

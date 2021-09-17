@@ -126,7 +126,7 @@ export default function header() {
                       }}
                       id="Faq"
                     >
-                      faq's
+                      faqs
                     </a>
                   </Link>
                 </li>

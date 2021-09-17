@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { useSelector, useDispatch } from "react-redux";
-import {logout} from "../../pages/redux/reducer/authReducer"
+import {logout} from "../../redux/reducer/authReducer"
 import { useRouter } from 'next/router'
 
 export default function HeaderAfterLogin() {
   const router = useRouter()
-
+// console.log();
   const dispatch = useDispatch()
   const logoutt = (e)=>{
   dispatch(logout())
@@ -17,13 +17,14 @@ export default function HeaderAfterLogin() {
       <div className="navbar-fixed-top">
         <div className="brand-bar bg-light">
           <div className="container  ">
-            <a className="brand" href="/">
+            <Link href="/">
+            <a className="brand" >
               {" "}
               <img
                 src="/assets/images/brand_logo.png"
                 alt="ISNA Matrimonials"
               />{" "}
-            </a>
+            </a></Link>
             <div className="pull-right ">
               <div className="pull-right d-flex align-items-center ">
                 <Link href="/user/dashboard">
@@ -37,7 +38,7 @@ export default function HeaderAfterLogin() {
                 <Link href="/user/list-media">
                   <a>Gallery</a>
                 </Link>
-                <div
+                <div></div><div
                   className="btn-group ml-15 dropdown"
                   style={{ display: "inline-block !important" }}
                 >
