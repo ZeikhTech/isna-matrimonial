@@ -28,6 +28,7 @@ const slice = createSlice({
       state.token = action.payload;
     },
     logout:(state,action)=>{
+      localStorage.removeItem("xAuthToken");
       state.token=""
     },
     resetAuth: (state) => {

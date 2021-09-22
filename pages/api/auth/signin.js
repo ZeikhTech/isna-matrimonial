@@ -27,10 +27,8 @@ const signin = async (req,res)=>{
 
         return res.status(400).send({ message: result.message });
     } else {
-        console.log("error nia ha")
       var { email,password } = req.body;
-const user = await User.findOne({email:req.body.email},(err,res)=>{console.log("in callback",res);})
-console.log("ye user ha dummy",user);
+// const user = await User.findOne({email:req.body.email},(err,res)=>{console.log("in callback",res);})
       const updatedUser = await User.findOne(
         { email:email },
         function (err, user) {
@@ -42,7 +40,7 @@ console.log("ye user ha dummy",user);
             });
           } else {
             if (!user) {
-              return res.status(401).send({
+              return res.status(400).send({
                 status: 401,
                 message: "User not found",
               });
@@ -50,25 +48,22 @@ console.log("ye user ha dummy",user);
             //            if (!user.email.isVerified) {
 
             if (!user.email) {
-                console.log("hete");
               return res.send({
                 status: 401,
                 message: "Please verify your email address",
               });
             } else {
-                console.log("here in else");
               bcrypt.compare(password, user.password, async (err, result) => {
                 if (err || !result) {
                   return res
-                    .status(403)
-                    .send({ status: 403, message: "Wrong password." });
+                    .status(400)
+                    .send({status:403, message:"Wrong password."});
                 } else {
                   const EMAIL_SECRET = secretOrPrivateKey;
                   const userId = user._id;
                   const accessToken = jwt.sign({ userId }, EMAIL_SECRET, {
                     expiresIn: "10h",
                   });
-                  console.log(accessToken);
                   var decoded = jwtDecode(accessToken);
 
                   var data = {

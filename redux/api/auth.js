@@ -1,15 +1,12 @@
 import http from "../../services/http";
 import storage from "../../services/storage";
 
-// import { handleErrors } from "../../../helpers/error";
-import dynamic from 'next/dynamic'
-
-
-
+import { handleErrors } from "../../helpers/error";
 import { setToken, setUser, resetAuth } from "../reducer/authReducer";
-const {handleErrors} = dynamic(() => import('../../helpers/error'), {
-  ssr: false
-})
+// import dynamic from 'next/dynamic'
+// const {handleErrors} = dynamic(() => import('../../helpers/error'), {
+//   ssr: false
+// })
 const path = "/auth";
 export const signupUser = ({ body = {}, onSuccess, onError, onEnd }) => {
   return async (dispatch) => {
@@ -63,9 +60,9 @@ export const signinUser = ({ body = {}, onSuccess, onError, onEnd }) => {
       // //onSuccess event firing
       if (onSuccess) onSuccess(res);
     } catch (err) {
-      console.log("err", err);
+      console.log("errsdsdsd",err);
       //onError event firing
-      if (onError) onError(err);
+      if (onError) handleErrors(err);
       else handleErrors(err);
     } finally {
       if (onEnd) onEnd();
@@ -77,6 +74,6 @@ function setCookie(cname, cvalue, exdays) {
   var d = new Date();
   d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
   var expires = "expires=" + d.toUTCString();
-  // if (typeof window !== "undefined")
-  //   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  if (typeof window !== "undefined")
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }

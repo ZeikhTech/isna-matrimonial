@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Header2 from "./header-after-login";
 const onChangeCat = (type) => {
-  console.log("comming ", type);
   var array = ["Home", "About", "Articles", "Faq", "Contact"];
   for (let x = 0; x < array.length; x++) {
     $(`#${array[x]}`).removeClass("active");

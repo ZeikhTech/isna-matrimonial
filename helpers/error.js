@@ -1,6 +1,8 @@
 import React from "react";
-import { toast } from "react-toastify";
-import ToastBody from "../components/ToastBody";
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
+import {ToastBody} from "../components/ToastBody";
 import storage from "../services/storage";
 
 export const handleErrors = (error) => {
@@ -9,9 +11,10 @@ export const handleErrors = (error) => {
     error.response.status >= 400 &&
     error.response.status <= 500;
 
-  console.log(error);
+  // console.log(error);
 
   if (typeof error === "string") {
+    
     return toast.error(<ToastBody title="Error" message={error} />);
   }
   if (!expectedError) {
@@ -31,8 +34,10 @@ export const handleErrors = (error) => {
     if (typeof window !== "undefined") window.location.href = "/";
     setCookie("xAuthToken", "", -1);
   } else if (error.response.status === 403) {
+    console.log('status 403');
     toast.warn(
       <ToastBody title="Warning" message={error.response.data.message} />
+     
     );
   } else if (error.response.status === 500) {
     toast.error(

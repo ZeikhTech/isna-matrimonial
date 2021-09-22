@@ -3,16 +3,16 @@ import { useSelector, useDispatch } from "react-redux";
 import {logout} from "../../redux/reducer/authReducer"
 import { useRouter } from 'next/router'
 
-export default function HeaderAfterLogin() {
+export default function HeaderAfterLogin(props) {
   const router = useRouter()
 // console.log();
   const dispatch = useDispatch()
   const logoutt = (e)=>{
   dispatch(logout())
+  // localStorage.removeItem("xAuthToken");
   router.push('/staticpages/login', undefined, { shallow: true })
-
   }
-  return (
+  return (  
     <header>
       <div className="navbar-fixed-top">
         <div className="brand-bar bg-light">

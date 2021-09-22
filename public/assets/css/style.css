@@ -1312,12 +1312,12 @@ a.theme-button {
 }
 
 a.theme-btn-light:hover {
-  color: white !important;
+  color: rgb(102, 0, 0);
 }
 
 .theme-button:hover {
   background: transparent;
-  color: rgb(102, 0, 0);
+  color: rgb(102, 0, 0) !important;
 }
 
 a.theme-btn-light:hover {
@@ -2803,7 +2803,7 @@ header .navbar-fixed-top {
 
 .navbar-fixed-top,
 .navbar-fixed-bottom {
-  position: fixed;
+  /* position: fixed; */
   right: 0;
   left: 0;
   z-index: 1030;
@@ -4025,4 +4025,13 @@ a.act.mt-15.icon-folder-close-alt.create_custom_folder_overlay {
 
 .control-label {
   font-weight: bold;
+}
+.overlapping-loader {
+  align-items: center;
+  position: absolute;
+  margin-left: 45%;
+  margin-top: 20%;
+  background: transparent;
+  font-size: 48px;
+  z-index: 99999;
 }

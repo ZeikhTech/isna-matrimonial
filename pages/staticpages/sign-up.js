@@ -5,8 +5,11 @@ import { useRouter } from 'next/router'
 import { signupSchema } from "../../utils/validations";
 import { useState, useContext } from "react";
 import { postData } from "../../utils/fetchData";
+import { Modal, Row, Col } from "react-bootstrap";
+import Loader from "../../components/Loader";
+
 import {
-  signupUser,
+  signupUser, 
   signinWithFacebook,
   signinWithGoogle,
 } from "../../redux/api/auth";
@@ -18,13 +21,24 @@ const initialValue = {
   cf_password: "",
 };
 
+  //overlapping Loader
+  const renderLoader = () => {
+    return (
+      <div className="overlapping-loader">
+        <Loader />
+      </div>
+    );
+  };
 export default function SignUp() {
+  const [showLoader, setShowLoader] = useState(false);
+
   // log
   const router = useRouter()
     const dispatch = useDispatch();
   const submitForm = async (userData) => {
     console.log(userData);
     // const res = await postData("auth/register", userData);
+    setShowLoader(true);
 
     dispatch(
       signupUser({
@@ -37,7 +51,7 @@ export default function SignUp() {
           // this.props.history.push("/");
         },
         onEnd: () => {
-          // setShowLoader(false);
+          setShowLoader(false);
         },
       })
     );
@@ -48,15 +62,20 @@ export default function SignUp() {
   return (
     <div>
       <section className="login-page">
+      {showLoader && renderLoader()}
+
         <div className="container-fluid p-0">
           <div className="row no-gutters">
             <div className="col-lg-6 sign-up">
               <div className="content">
                 <h1>Welcome!</h1>
+
               </div>
             </div>
             <div className="col-lg-6">
+
               <div className="login">
+ 
                 <Formik
                   initialValues={initialValue}
                   validationSchema={signupSchema}
@@ -114,6 +133,7 @@ export default function SignUp() {
                       {errors.cf_password && touched.cf_password ? (
                         <div>{errors.cf_password}</div>
                       ) : null}
+
 
                       <button
                         // onClick={handleSubmit}

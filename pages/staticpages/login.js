@@ -3,16 +3,35 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import { loginSchema } from "../../utils/validations";
 import { useRouter } from 'next/router'
 import { useSelector, useDispatch } from "react-redux";
-import {useState} from "react"
+import {useState,useEffect} from "react"
 import {
   signinUser,
 } from "../../redux/api/auth";
-export default function Login() {
-const {errors,setErrors}= useState("")
-  const router = useRouter()
-    const dispatch = useDispatch();
-  const submitForm = async (userData) => {
+import Loader from "../../components/Loader";
 
+export default function Login() {
+  
+  const [showLoader, setShowLoader] = useState(false);
+ //overlapping Loader
+ const renderLoader = () => {
+  return (
+    <div className="overlapping-loader">
+      <Loader />
+    </div>
+  );
+};
+const {errors,setErrors}= useState("")
+
+  const router = useRouter()
+  const dispatch = useDispatch();
+//   global.onload = function() {
+//     if(!global.location.hash) {
+//       global.location = global.location + '#loaded';
+//       global.location.reload();
+//     }
+// }
+  const submitForm = async (userData) => {
+    setShowLoader(true);
     dispatch(
       signinUser({
         body: userData,
@@ -20,24 +39,15 @@ const {errors,setErrors}= useState("")
 
           console.log(res);
           if(res.data.status==200){
-            localStorage.setItem("accessToken",res.data.accessToken)
             router.push('/', undefined, { shallow: true })  
           }
-
           // this.props.history.push("/");
-        },onError:(res)=>{
-          console.log(res);
-          if(res.status==403){
-            console.log("402");
-            alert("Worng usernmae password")
-          }else if(res.status==401){
-            console.log("401");
-            alert("User not found")
-          }
+        },
+        onError:(res)=>{
           
         },
         onEnd: () => {
-          // setShowLoader(false);
+          setShowLoader(false);
         },
       })
     );
@@ -45,7 +55,10 @@ const {errors,setErrors}= useState("")
 
   return (
     <div>
+       
       <section className="login-page">
+      {showLoader && renderLoader()}
+
         <div className="container-fluid p-0">
           <div className="row no-gutters">
             <div className="col-lg-6 sign-up">
@@ -130,7 +143,7 @@ const {errors,setErrors}= useState("")
                       </ul>
                       <p>
                         Not Registered?
-                        <Link href="staticpages/SignUp">
+                        <Link href="/staticpages/sign-up">
                           <a>Join for Free</a>
                         </Link>
                       </p>

@@ -20,6 +20,7 @@ const register = async (req, res) => {
     const formikResult = signupSchema.validate(req.body);
     const user = await User.find({ email });
     if (user.length > 0) {
+      console.log("Email already exists");
       return res.status(409).send({ message: "Email already exists!" });
     }
     if (password) {
