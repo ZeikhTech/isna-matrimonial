@@ -6,12 +6,8 @@ import {ToastBody} from "../components/ToastBody";
 import storage from "../services/storage";
 
 export const handleErrors = (error) => {
-  const expectedError =
-    error.response &&
-    error.response.status >= 400 &&
-    error.response.status <= 500;
+  const expectedError = error.response && error.response.status >= 400 && error.response.status <= 500;
 
-  // console.log(error);
 
   if (typeof error === "string") {
     
@@ -21,7 +17,7 @@ export const handleErrors = (error) => {
     toast.error(
       <ToastBody title="Error" message="An unexpected error occurrred." />
     );
-  } else if (error.response.status === 400) {
+  } else if (error.response.status === 400||error.response.status === 409) {
     toast.error(
       <ToastBody title="Error" message={error.response.data.message} />
     );
@@ -34,7 +30,6 @@ export const handleErrors = (error) => {
     if (typeof window !== "undefined") window.location.href = "/";
     setCookie("xAuthToken", "", -1);
   } else if (error.response.status === 403) {
-    console.log('status 403');
     toast.warn(
       <ToastBody title="Warning" message={error.response.data.message} />
      

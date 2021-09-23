@@ -5,11 +5,9 @@ import { useRouter } from 'next/router'
 
 export default function HeaderAfterLogin(props) {
   const router = useRouter()
-// console.log();
   const dispatch = useDispatch()
   const logoutt = (e)=>{
   dispatch(logout())
-  // localStorage.removeItem("xAuthToken");
   router.push('/staticpages/login', undefined, { shallow: true })
   }
   return (  

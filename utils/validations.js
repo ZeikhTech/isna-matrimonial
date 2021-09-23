@@ -16,7 +16,7 @@ export const loginSchema = Yup.object().shape({
   password: Yup.string().min(5, "Too short!").required("Required"),
 });
 
-export const cpSchema = Yup.object().shape({
+export const changePasswordSchema = Yup.object().shape({
   oldPassword: Yup.string().required("Required"),
   newPassword: Yup.string().min(5, "Too short!").required("Required"),
   cf_password: Yup.string().oneOf(
@@ -24,19 +24,33 @@ export const cpSchema = Yup.object().shape({
     "Passwords must match!"
   ),
 });
-export const fp_emailSchema = Yup.object().shape({
-  email: Yup.string().email("Invalid email").required("Required"),
-});
+// export const forgetPassEmailSchema = Yup.object().shape({
+//   email: Yup.string().email("Invalid email").required("Required"),
+// });
 
-export const fg_passSchema = Yup.object().shape({
+export const validatePasswordReset = Yup.object().shape({
   password: Yup.string().min(5, "Too short!").required("Required"),
   cf_password: Yup.string().oneOf(
     [Yup.ref("password"), null],
     "Passwords must match!"
   ),
+  // token: Yup.string().required("Required"),/
+
 });
 
 export const contactUs = Yup.object().shape({
   subject: Yup.string().min(1).required("Required"),
   email: Yup.string().email("Invalid email").required("Required"),
+});
+export const requestPasswordResetSchema = Yup.object().shape({
+  email: Yup.string().email("Invalid email").required("Required"),
+});
+export const validatePasswords = Yup.object().shape({
+  password: Yup.string().min(5, "Too short!").required("Required"),
+  cf_password: Yup.string().oneOf(
+    [Yup.ref("password"), null],
+    "Passwords must match!"
+  ),
+  token: Yup.string().required("Required"),
+
 });

@@ -4,8 +4,8 @@ const webpack = require("webpack");
 module.exports = {
   reactStrictMode: true,
   env: {
-    // BASE_URL: "http://localhost:3000/",
-    BASE_URL: "https://isna-matrimonial.herokuapp.com/",
+    BASE_URL: "http://localhost:3000/",
+    // BASE_URL: "https://isna-matrimonial.herokuapp.com/",
 
     MONGO_URL:
       "mongodb+srv://sightings:YnKYf8qPDWYKP2Rd@cluster0.zucpt.mongodb.net/?retryWrites=true&w=majority",

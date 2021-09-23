@@ -1,6 +1,7 @@
 import React from "react";
 
-export const  ToastBody = (props) => {
+export const Toast = (props) => {
+  console.log("comming in toast");
   const { title, image, time, message, closeToast } = props;
   return (
     <>

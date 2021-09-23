@@ -17,16 +17,16 @@ export const signupUser = ({ body = {}, onSuccess, onError, onEnd }) => {
         data: { data: user },
         headers,
       } = res;
-      const xAuthToken = headers["x-auth-token"];
-      dispatch(setToken(xAuthToken));
-      dispatch(setUser(user));
-      setCookie("xAuthToken", xAuthToken, 365);
-      storage.store("xAuthToken", xAuthToken);
-      storage.store("user", user);
+      // const xAuthToken = headers["x-auth-token"];
+      // dispatch(setToken(xAuthToken));
+      // dispatch(setUser(user));
+      // setCookie("xAuthToken", xAuthToken, 365);
+      // storage.store("xAuthToken", xAuthToken);
+      // storage.store("user", user);
       // //onSuccess event firing
       if (onSuccess) onSuccess(res);
     } catch (err) {
-      console.log("err", err);
+      console.log("error ye ha",err);
       //onError event firing
       if (onError) onError(err);
       else handleErrors(err);
@@ -45,11 +45,8 @@ export const signinUser = ({ body = {}, onSuccess, onError, onEnd }) => {
         data: { data: user },
         headers,
       } = res;
-      console.log(res.data.data);
-      // const xAuthToken = headers["x-auth-token"];
       const xAuthToken = res.data.accessToken;
 
-      console.log("token in redux", dispatch(setToken(xAuthToken)));
       dispatch(setToken(xAuthToken));
       // dispatch(setToken(xAuthToken));
 
@@ -60,16 +57,53 @@ export const signinUser = ({ body = {}, onSuccess, onError, onEnd }) => {
       // //onSuccess event firing
       if (onSuccess) onSuccess(res);
     } catch (err) {
-      console.log("errsdsdsd",err);
       //onError event firing
-      if (onError) handleErrors(err);
+      if (onError) onError(err);
       else handleErrors(err);
     } finally {
       if (onEnd) onEnd();
     }
   };
 };
-
+export const requestPasswordReset = ({
+  body = {},
+  onSuccess,
+  onError,
+  onEnd,
+}) => {
+  return async (dispatch, getState) => {
+    try {
+      const res = await http.post({
+        url: path + "/request_password_reset",
+        body,
+      });
+      if (onSuccess) onSuccess(res);
+    } catch (err) {
+      //onError event firing
+      if (onError) onError(err);
+      else handleErrors(err);
+    } finally {
+      if (onEnd) onEnd();
+    }
+  };
+};
+export const resetMyPassword = ({ body = {}, onSuccess, onError, onEnd }) => {
+  return async (dispatch, getState) => {
+    try {
+      const res = await http.put({
+        url: path + "/reset_password",
+        body,
+      });
+      if (onSuccess) onSuccess(res);
+    } catch (err) {
+      //onError event firing
+      if (onError) onError(err);
+      else handleErrors(err);
+    } finally {
+      if (onEnd) onEnd();
+    }
+  };
+};
 function setCookie(cname, cvalue, exdays) {
   var d = new Date();
   d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);

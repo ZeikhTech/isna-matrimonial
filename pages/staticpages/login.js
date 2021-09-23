@@ -8,7 +8,7 @@ import {
   signinUser,
 } from "../../redux/api/auth";
 import Loader from "../../components/Loader";
-
+import { toast } from "react-toastify";
 export default function Login() {
   
   const [showLoader, setShowLoader] = useState(false);
@@ -24,13 +24,14 @@ const {errors,setErrors}= useState("")
 
   const router = useRouter()
   const dispatch = useDispatch();
-//   global.onload = function() {
-//     if(!global.location.hash) {
-//       global.location = global.location + '#loaded';
-//       global.location.reload();
-//     }
-// }
+  const [errorMessage, setErrorMessage] = useState({
+    type: "success",
+    message: "",
+  });
   const submitForm = async (userData) => {
+    
+    setErrorMessage({ type: "danger", message: "" });
+
     setShowLoader(true);
     dispatch(
       signinUser({
@@ -41,10 +42,15 @@ const {errors,setErrors}= useState("")
           if(res.data.status==200){
             router.push('/', undefined, { shallow: true })  
           }
-          // this.props.history.push("/");
+        
         },
-        onError:(res)=>{
-          
+        onError:(err)=>{
+          if (err.response && err.response.data && err.response.data.message) {
+            setErrorMessage({
+              type: "danger",
+              message: err.response.data.message,
+            });
+          }
         },
         onEnd: () => {
           setShowLoader(false);
@@ -101,6 +107,11 @@ const {errors,setErrors}= useState("")
                       {errors.password && touched.password ? (
                         <div>{errors.password}</div>
                       ) : null}
+                      {errorMessage.message && (
+                <div className={`alert alert-${errorMessage.type}`}>
+                  {errorMessage.message}
+                </div>
+              )}
                       <div className="custom-control custom-checkbox">
                         <input
                           type="checkbox"

@@ -20,21 +20,18 @@ const register = async (req, res) => {
     const formikResult = signupSchema.validate(req.body);
     const user = await User.find({ email });
     if (user.length > 0) {
-      console.log("Email already exists");
       return res.status(409).send({ message: "Email already exists!" });
     }
     if (password) {
       const salt = await bcrypt.genSalt(parseInt(saltRounds));
       var hash = await bcrypt.hash(req.body.password, salt);
     }
-    // console.log("salt", hash);
     const newuser = new User({
       name: name,
       email: email,
       password: hash,
     });
     const result = await newuser.save();
-    console.log("result ", result);
     return res.status(200).json({
       status: 200,
       message: "success",

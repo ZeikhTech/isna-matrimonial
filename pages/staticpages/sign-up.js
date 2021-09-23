@@ -39,16 +39,11 @@ export default function SignUp() {
     console.log(userData);
     // const res = await postData("auth/register", userData);
     setShowLoader(true);
-
     dispatch(
       signupUser({
         body: userData,
         onSuccess: (res) => {
-          // if (verifyLink) {
-          //   verifyLink.click();
-          // }
           router.push('/staticpages/login', undefined, { shallow: true })
-          // this.props.history.push("/");
         },
         onEnd: () => {
           setShowLoader(false);

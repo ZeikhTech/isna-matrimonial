@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Formik, Form, Field } from "formik";
-import { fg_passSchema } from "../../utils/validations";
+import { fg_passSchema } from "../../../utils/validations";
 const initialValues = {
   password: "",
   cf_password: "",

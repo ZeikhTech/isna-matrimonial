@@ -23,12 +23,10 @@ const signin = async (req,res)=>{
   try{    
     const result = loginSchema.validate(req.body);
     if (result.error) {
-        console.log("error ha");
 
         return res.status(400).send({ message: result.message });
     } else {
       var { email,password } = req.body;
-// const user = await User.findOne({email:req.body.email},(err,res)=>{console.log("in callback",res);})
       const updatedUser = await User.findOne(
         { email:email },
         function (err, user) {
@@ -72,10 +70,8 @@ const signin = async (req,res)=>{
                     avatar: user.avatar,
                     role: user.role,
                   };
-                  // console.log("accessToken", data);
 
                   const id = user._id;
-                //   createUserSession(res, data);
                     
                   return res.status(200).send({
                     status: 200,

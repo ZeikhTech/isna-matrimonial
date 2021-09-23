@@ -4035,3 +4035,6 @@ a.act.mt-15.icon-folder-close-alt.create_custom_folder_overlay {
   font-size: 48px;
   z-index: 99999;
 }
+.update-pass-btn {
+  font-weight: normal !important
+}
